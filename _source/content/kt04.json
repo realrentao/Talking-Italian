@@ -1,0 +1,68 @@
+{
+  "book": "keep",
+  "day": 4,
+  "slug": "kt04",
+  "title": "到店用餐",
+  "orig": "Having a meal",
+  "lead": "到店后订位出了岔子怎么办？学会说明已经订过位、听懂道歉并体面收场。",
+  "goals": ["说明已有预订", "听懂前台解释失误", "掌握近过去时的基本用法", "得体地道歉与回应"],
+  "core": [
+    {"it": "Abbiamo prenotato per le 13.30.", "zh": "我们订了十三点半的位子。"},
+    {"it": "No, il mio nome è Lassey …", "zh": "不，我叫拉西……"},
+    {"it": "… siamo in quattro.", "zh": "……我们一共四位。"},
+    {"it": "C’è stato un errore.", "zh": "出了点差错。"},
+    {"it": "Se volete accomodarvi al bar …", "zh": "如果你们愿意先在吧台坐一下……"},
+    {"it": "Vedo se posso risolvere il problema.", "zh": "我看看能不能解决。"},
+    {"it": "Mi scuso ancora a nome della direzione.", "zh": "我再次代表管理层向您致歉。"},
+    {"it": "Se mi seguite.", "zh": "请跟我来。"}
+  ],
+  "dialogue": [
+    {"who": "亚历克斯", "it": "Buongiorno.", "zh": "您好。"},
+    {"who": "前台", "it": "Buongiorno. Prego.", "zh": "您好，请讲。"},
+    {"who": "亚历克斯", "it": "Abbiamo prenotato per le 13.30.", "zh": "我们订了十三点半的位子。"},
+    {"who": "前台", "it": "Un attimo. Sì, è un tavolo per cinque per la signora Cini?", "zh": "稍等。是奇尼女士订的五人桌吗？"},
+    {"who": "亚历克斯", "it": "No, il mio nome è Lassey e siamo in quattro.", "zh": "不是，我叫拉西，一共四位。"},
+    {"who": "前台", "it": "Signora, mi dispiace, ma c’è stato un errore. Se volete accomodarvi al bar, vedo se posso risolvere il problema.", "zh": "女士，很抱歉出了差错。您愿意先在吧台坐一下吗？我看看能不能解决。"},
+    {"who": "前台", "it": "Mi scuso ancora a nome della direzione. C’è un tavolo libero. Se mi seguite, è da questa parte.", "zh": "我再次代表管理层向您致歉。现在有空桌了，请跟我来，在这边。"},
+    {"who": "亚历克斯", "it": "Sì, grazie.", "zh": "好的，谢谢。"}
+  ],
+  "extraTitle": "近过去时：avere 与 essere",
+  "extra": [
+    {"it": "ho visitato", "zh": "我参观过／我参观了"},
+    {"it": "ho telefonato", "zh": "我打过电话"},
+    {"it": "ho avuto", "zh": "我有过"},
+    {"it": "ho cercato", "zh": "我找过"},
+    {"it": "ho comprato", "zh": "我买过"},
+    {"it": "ho ordinato", "zh": "我点过"},
+    {"it": "ho perso", "zh": "我丢了"},
+    {"it": "ho chiesto", "zh": "我问过"},
+    {"it": "sono stato", "zh": "我去过／我在过"},
+    {"it": "sono andato", "zh": "我去了"},
+    {"it": "sono ritornato", "zh": "我回来了"},
+    {"it": "sono venuto", "zh": "我来了"}
+  ],
+  "plusTitle": "拓展：过去时间表达与道歉",
+  "plus": [
+    {"it": "ieri", "zh": "昨天"},
+    {"it": "il giorno prima", "zh": "前一天"},
+    {"it": "l’altro ieri", "zh": "前天"},
+    {"it": "la settimana scorsa", "zh": "上周"},
+    {"it": "venerdì scorso", "zh": "上周五"},
+    {"it": "Mi scusi. / Mi dispiace.", "zh": "对不起。"},
+    {"it": "La prego di accettare le mie scuse.", "zh": "请接受我的道歉。"},
+    {"it": "Sono mortificato!", "zh": "我太抱歉了！"},
+    {"it": "Le devo una scusa.", "zh": "我得向您道歉。"},
+    {"it": "Ho fatto un errore.", "zh": "我搞错了。"},
+    {"it": "C’è stato un equivoco.", "zh": "有个误会。"}
+  ],
+  "tasks": [
+    "听对话，回答：前台请亚历克斯他们先做什么？她代表谁道歉？",
+    "再听一遍：订位出了什么错？问题怎么解决的？",
+    "词义理解：Signora, mi dispiace, ma c’è stato un errore 是什么意思？什么时候说 Mi scuso ancora a nome della direzione？",
+    "情景跟读：告诉前台你们订了十三点半，再补充「我上周五打过电话」。"
+  ],
+  "tips": [
+    "近过去时（passato prossimo）由助动词 + 过去分词构成：大部分动词用 avere（ho prenotato），表示 movement 或状态的动词用 essere（sono andato）。",
+    "正式道歉可以说 Mi scuso ancora a nome della direzione（我代表管理层再次致歉），对方一般会接受。"
+  ]
+}

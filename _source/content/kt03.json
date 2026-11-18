@@ -1,0 +1,66 @@
+{
+  "book": "keep",
+  "day": 3,
+  "slug": "kt03",
+  "title": "电话订位",
+  "orig": "Booking a table",
+  "lead": "用电话订餐厅座位：问营业时间、报人数和姓名，再学会拼读自己的名字和常用电话用语。",
+  "goals": ["电话预订餐厅座位", "听懂营业时间", "拼读意大利语字母", "使用电话沟通表达"],
+  "core": [
+    {"it": "Pronto.", "zh": "喂？"},
+    {"it": "Ristorante Valparaiso, buongiorno.", "zh": "瓦帕莱索餐厅，您好。"},
+    {"it": "Siete aperti a mezzogiorno?", "zh": "中午营业吗？"},
+    {"it": "Che orario fate a mezzogiorno?", "zh": "中午几点到几点？"},
+    {"it": "Accettate prenotazioni?", "zh": "接受预订吗？"},
+    {"it": "Quattro per venerdì.", "zh": "周五，四位。"},
+    {"it": "A che nome?", "zh": "请问用什么名字？"}
+  ],
+  "dialogue": [
+    {"who": "亚历克斯", "it": "Pronto, buongiorno.", "zh": "喂，您好。"},
+    {"who": "前台", "it": "Pronto, Ristorante Valparaiso, buongiorno.", "zh": "您好，瓦帕莱索餐厅。"},
+    {"who": "亚历克斯", "it": "Siete aperti a mezzogiorno?", "zh": "中午营业吗？"},
+    {"who": "前台", "it": "Sì, siamo aperti tutti i giorni tranne il lunedì.", "zh": "是的，除周一外每天都营业。"},
+    {"who": "亚历克斯", "it": "Che orario fate a mezzogiorno?", "zh": "中午营业时间是什么？"},
+    {"who": "前台", "it": "Siamo aperti dalle 12 alle 14 e 30.", "zh": "十二点到十四点半。"},
+    {"who": "亚历克斯", "it": "Accettate prenotazioni?", "zh": "接受预订吗？"},
+    {"who": "前台", "it": "Sì, per quante persone?", "zh": "接受，几位？"},
+    {"who": "亚历克斯", "it": "Quattro per venerdì.", "zh": "周五，四位。"},
+    {"who": "前台", "it": "Bene, a che nome?", "zh": "好的，怎么称呼？"},
+    {"who": "亚历克斯", "it": "Lassey. L-A-S-S-E-Y.", "zh": "拉西。L-A-S-S-E-Y。"},
+    {"who": "前台", "it": "Va bene per le 13.30?", "zh": "十三点半可以吗？"},
+    {"who": "亚历克斯", "it": "Sì, penso di sì.", "zh": "可以，我想没问题。"},
+    {"who": "前台", "it": "Grazie, allora a venerdì.", "zh": "谢谢，那周五见。"}
+  ],
+  "extraTitle": "意大利语字母表",
+  "extra": [
+    {"it": "a, b, c, d, e, f, g", "zh": "a, b, c, d, e, f, g"},
+    {"it": "h, i, l, m, n, o, p", "zh": "h, i, l, m, n, o, p"},
+    {"it": "q, r, s, t, u, v, z", "zh": "q, r, s, t, u, v, z"},
+    {"it": "J — i lunga", "zh": "J 读作 i lunga"},
+    {"it": "K — cappa", "zh": "K 读作 cappa"},
+    {"it": "W — doppia vu", "zh": "W 读作 doppia vu"},
+    {"it": "X — ics", "zh": "X 读作 ics"},
+    {"it": "Y — ipsilon / i greca", "zh": "Y 读作 ipsilon 或 i greca"}
+  ],
+  "plusTitle": "拓展：电话用语",
+  "plus": [
+    {"it": "Posso parlare con ...?", "zh": "我可以找……说话吗？"},
+    {"it": "Mi può passare ...?", "zh": "能帮我转接……吗？"},
+    {"it": "il centralino", "zh": "总机"},
+    {"it": "il numero diretto", "zh": "直拨号码"},
+    {"it": "La linea è occupata.", "zh": "电话占线。"},
+    {"it": "Richiamo più tardi.", "zh": "我稍后再打。"},
+    {"it": "Posso lasciare un messaggio ...", "zh": "我可以留言……吗？"},
+    {"it": "... sulla segreteria telefonica?", "zh": "……在语音信箱里？"}
+  ],
+  "tasks": [
+    "听对话，回答：餐厅哪天不营业？亚历克斯订的是什么时候？",
+    "再听一遍：他问了哪些午间营业信息？订了几位？",
+    "词义理解：Pronto, buongiorno 是什么意思？Siete aperti a mezzogiorno 里哪个词说明他关心午餐时段？a venerdì 是什么意思？",
+    "情景跟读：对方问姓名时，回答 Brown 并逐个字母拼出来；接线员说占线时，回答「没关系，我稍后再打」。"
+  ],
+  "tips": [
+    "意大利语问句句尾语调上扬，有助于和陈述句区分；说 Pronto 是接电话的固定说法。",
+    "意大利语字母表只有 21 个本土字母，J/K/W/X/Y 是外来字母，拼名字时要会说它们的名字。"
+  ]
+}

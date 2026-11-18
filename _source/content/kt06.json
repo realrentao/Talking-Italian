@@ -1,0 +1,70 @@
+{
+  "book": "keep",
+  "day": 6,
+  "slug": "kt06",
+  "title": "品酒",
+  "orig": "Wine tasting",
+  "lead": "走进家族酒庄：说出喜欢的口味、做比较、听推荐，最后买几瓶本地好酒带回家。",
+  "goals": ["描述不同类型的葡萄酒", "作比较并表达偏好", "掌握酒类与品鉴形容词", "使用比较级"],
+  "core": [
+    {"it": "Posso aiutarla?", "zh": "需要我帮忙吗？"},
+    {"it": "Vorrei assaggiare i vostri vini.", "zh": "我想尝尝你们的酒。"},
+    {"it": "Quale vino preferisce?", "zh": "您更喜欢哪种酒？"},
+    {"it": "Sia bianco che rosso.", "zh": "红白都喜欢。"},
+    {"it": "Vorrei iniziare con il bianco.", "zh": "我想先从白葡萄酒开始。"},
+    {"it": "Un vino più secco, più forte.", "zh": "更干、更浓郁的酒。"},
+    {"it": "Quale vino rosso consiglia?", "zh": "您推荐哪款红葡萄酒？"},
+    {"it": "Mi piace molto.", "zh": "我非常喜欢。"},
+    {"it": "Il nostro punto vendita è qui di fronte.", "zh": "我们的门店就在对面。"}
+  ],
+  "dialogue": [
+    {"who": "品酒师", "it": "Buongiorno. Posso aiutarla?", "zh": "您好，需要帮忙吗？"},
+    {"who": "约翰", "it": "Buongiorno. Vorrei assaggiare i vostri vini.", "zh": "您好，我想尝尝你们的酒。"},
+    {"who": "品酒师", "it": "Quale vino preferisce, bianco o rosso?", "zh": "您喜欢白葡萄酒还是红葡萄酒？"},
+    {"who": "约翰", "it": "Ma, veramente mi piace sia bianco che rosso. Vorrei iniziare con il bianco.", "zh": "其实红白我都喜欢，想先从白葡萄酒开始。"},
+    {"who": "品酒师", "it": "Questo vino, il Bianchello del Metauro, è tipico della regione Marche. Le piace?", "zh": "这款梅塔罗河白葡萄酒是马尔凯大区的特色。您喜欢吗？"},
+    {"who": "约翰", "it": "Sì, ha un gusto delicato, ma preferisco un vino più secco, più forte.", "zh": "喜欢，口感很细腻，不过我更喜欢更干、更浓郁的。"},
+    {"who": "品酒师", "it": "Questo Verdicchio è un vino molto secco.", "zh": "这款维尔迪基奥非常干。"},
+    {"who": "约翰", "it": "Oh, sì, questo mi piace molto. E quale vino rosso consiglia?", "zh": "哦，这款我很喜欢。红葡萄酒您推荐哪款？"},
+    {"who": "品酒师", "it": "Il Rosso Conero.", "zh": "科内罗红葡萄酒。"},
+    {"who": "约翰", "it": "Ummm, sì, mi piace molto. Vorrei comprare delle bottiglie.", "zh": "嗯，我很喜欢，想买几瓶。"},
+    {"who": "品酒师", "it": "Sì, il nostro punto vendita è qui di fronte.", "zh": "好的，我们的门店就在对面。"}
+  ],
+  "extraTitle": "酒类与口感",
+  "extra": [
+    {"it": "il rosato", "zh": "桃红葡萄酒"},
+    {"it": "vino da pasto", "zh": "餐酒"},
+    {"it": "frizzantino", "zh": "微泡酒"},
+    {"it": "vino novello", "zh": "新酒"},
+    {"it": "vino d’annata", "zh": "陈年佳酿"},
+    {"it": "vino dolce da dessert", "zh": "甜点酒"},
+    {"it": "vino passito", "zh": "风干葡萄酿的甜酒"},
+    {"it": "spumante", "zh": "起泡酒"},
+    {"it": "fermo", "zh": "无气泡的"},
+    {"it": "frizzante", "zh": "微起泡的"},
+    {"it": "leggero", "zh": "清淡的"},
+    {"it": "forte", "zh": "浓郁的"},
+    {"it": "robusto", "zh": "醇厚的"},
+    {"it": "fruttato", "zh": "果香浓郁的"},
+    {"it": "fresco", "zh": "冰镇过的／清爽的"},
+    {"it": "a temperatura ambiente", "zh": "常温的"}
+  ],
+  "plusTitle": "拓展：比较级",
+  "plus": [
+    {"it": "più di", "zh": "多于"},
+    {"it": "quanto", "zh": "和……一样（修饰不可数）"},
+    {"it": "quanti", "zh": "和……一样多（修饰可数）"},
+    {"it": "è buono quanto ...", "zh": "和……一样好"},
+    {"it": "meno di", "zh": "少于"}
+  ],
+  "tasks": [
+    "听对话，回答：约翰喜欢哪种酒？",
+    "再听一遍：他怎么形容梅塔罗河白葡萄酒的口感？他觉得科内罗红葡萄酒怎么样？",
+    "词义理解：Preferisco un vino più secco, più forte 里的 più 是什么意思？什么时候说 Sia bianco che rosso？",
+    "情景跟读：对方问你更喜欢白酒还是红酒时，回答更喜欢果香浓郁的桃红葡萄酒；又问甜酒还是帕西托酒时，回答更喜欢后者，因为更浓郁。"
+  ],
+  "tips": [
+    "molto 单独使用时表示「非常」，词尾不变；修饰名词时表示「许多」，要随名词阴阳单复数变化，如 molte bottiglie（许多瓶）。",
+    "意大利比较级常用 più（更）和 meno（ less）：più secco（更干）、meno di（少于）。"
+  ]
+}

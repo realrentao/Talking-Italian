@@ -1,0 +1,75 @@
+{
+  "book": "keep",
+  "day": 5,
+  "slug": "kt05",
+  "title": "逛集市",
+  "orig": "Going to the market",
+  "lead": "在意大利集市买香肠和面包：说清想买什么、尝一尝、报重量，再听懂总价。",
+  "goals": ["说明想买的食物", "描述食物选择并听懂重量", "掌握食物与计量词汇", "辨认市场里的摊位"],
+  "core": [
+    {"it": "Vorrei comprare del salame da portare in Inghilterra.", "zh": "我想买些香肠带回英国。"},
+    {"it": "Preferisco quello affumicato e un po’ stagionato.", "zh": "我更喜欢烟熏、稍微熟成一点的。"},
+    {"it": "Assaggi questo ...", "zh": "尝尝这个……"},
+    {"it": "Lo vuole comprare?", "zh": "您想买吗？"},
+    {"it": "€4 l’etto.", "zh": "一百克四欧元。"},
+    {"it": "Non è caro come il prosciutto.", "zh": "没有火腿那么贵。"},
+    {"it": "Ne vorrei mezzo chilo, per favore.", "zh": "我要半公斤，谢谢。"},
+    {"it": "Avete anche del pane?", "zh": "你们也卖面包吗？"}
+  ],
+  "dialogue": [
+    {"who": "亚历克斯", "it": "Buongiorno. Vorrei comprare del salame da portare in Inghilterra.", "zh": "您好，我想买些香肠带回英国。"},
+    {"who": "摊主", "it": "Che tipo di salame preferisce?", "zh": "您喜欢哪种香肠？"},
+    {"who": "亚历克斯", "it": "Mah, in genere preferisco quello affumicato, e un po’ stagionato.", "zh": "嗯，一般我喜欢烟熏、稍微熟成一点的。"},
+    {"who": "摊主", "it": "Assaggi questo salame Fabriano.", "zh": "尝尝这个法布里亚诺香肠。"},
+    {"who": "亚历克斯", "it": "Uh, sì, è proprio buono, lo preferisco anche al prosciutto.", "zh": "嗯，真好吃，我觉得比火腿还好吃。"},
+    {"who": "摊主", "it": "Lo vuole comprare?", "zh": "您想买吗？"},
+    {"who": "亚历克斯", "it": "Penso di sì, quanto costa?", "zh": "想买，多少钱？"},
+    {"who": "摊主", "it": "€4 l’etto, non è caro come il prosciutto.", "zh": "一百克四欧元，没有火腿贵。"},
+    {"who": "亚历克斯", "it": "Va bene, ne vorrei mezzo chilo, per favore.", "zh": "好的，我要半公斤。"},
+    {"who": "摊主", "it": "Se compra questi due salami interi, sono 5 etti e mezzo, va bene ugualmente?", "zh": "如果您买这两根完整的，是五百五十克，可以吗？"},
+    {"who": "亚历克斯", "it": "Sì, certo. Avete anche del pane?", "zh": "当然可以。你们也卖面包吗？"},
+    {"who": "摊主", "it": "Certo, quanto?", "zh": "当然，要多少？"},
+    {"who": "亚历克斯", "it": "Due ciabatte, per favore.", "zh": "两条恰巴塔，谢谢。"},
+    {"who": "摊主", "it": "Bene, ecco le ciabatte. Vuole altro?", "zh": "好，给您面包。还要别的吗？"},
+    {"who": "亚历克斯", "it": "No, grazie, è tutto. Quanto è il conto?", "zh": "不用了，谢谢，就这些。一共多少钱？"},
+    {"who": "摊主", "it": "Sono €22 per il salame e €3 per il pane, €25 in tutto.", "zh": "香肠二十二欧元，面包三欧元，共二十五欧元。"},
+    {"who": "亚历克斯", "it": "Ecco a lei, grazie.", "zh": "给您钱，谢谢。"}
+  ],
+  "extraTitle": "食材、重量与面包",
+  "extra": [
+    {"it": "la pancetta", "zh": "意大利腌培根"},
+    {"it": "il prosciutto cotto", "zh": "熟火腿"},
+    {"it": "la salsiccia", "zh": "香肠"},
+    {"it": "gli affettati", "zh": "冷切肉片"},
+    {"it": "il formaggio pecorino", "zh": "羊奶酪"},
+    {"it": "il formaggio di capra", "zh": "山羊奶酪"},
+    {"it": "il formaggio dolce", "zh": "口味温和的奶酪"},
+    {"it": "il formaggio piccante", "zh": "口味浓烈的奶酪"},
+    {"it": "un grammo", "zh": "一克"},
+    {"it": "un etto / cento grammi", "zh": "一百克"},
+    {"it": "mezzo chilo", "zh": "半公斤"},
+    {"it": "due chili", "zh": "两公斤"},
+    {"it": "una fetta", "zh": "一片"}
+  ],
+  "plusTitle": "拓展：市场与摊位",
+  "plus": [
+    {"it": "la piazza del mercato", "zh": "集市广场"},
+    {"it": "il mercato rionale", "zh": "社区市场"},
+    {"it": "il mercato all’aperto", "zh": "露天市场"},
+    {"it": "la bancarella", "zh": "摊位"},
+    {"it": "il bancarellaio / la bancarellaia", "zh": "摊主"},
+    {"it": "la bancarella di gastronomica", "zh": "熟食摊"},
+    {"it": "la bancarella del fruttivendolo", "zh": "果蔬摊"},
+    {"it": "la bancarella dei libri usati", "zh": "旧书摊"}
+  ],
+  "tasks": [
+    "听对话，回答：亚历克斯最后买了多少香肠？总共多少钱？",
+    "再听一遍：她觉得法布里亚诺香肠怎么样？表示想买后，她又问了摊主什么？",
+    "词义理解：什么时候用 Penso di sì？Ne vorrei mezzo chilo, per favore 和 No grazie, è tutto 是什么意思？",
+    "情景跟读：摊主问好时，回答想买两百克温和口味的山羊奶酪。"
+  ],
+  "tips": [
+    "代词 ne 表示「其中／一些」，通常放在动词前：ne vorrei mezzo chilo（我想要半公斤）；ne compro due fette（我买两片）。",
+    "意大利市场常用 etto（一百克）计量，mezzo chilo 是半公斤（五百克）；l’etto 表示「每百克」。"
+  ]
+}

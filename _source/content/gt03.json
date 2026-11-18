@@ -1,0 +1,61 @@
+{
+  "book": "get",
+  "day": 3,
+  "slug": "gt03",
+  "title": "乘坐公交车",
+  "orig": "Getting a bus",
+  "lead": "买车票、问清哪路车、几点发车、从哪儿发车——把城市公共交通这套流程一次说顺。",
+  "goals": ["购买公交票并提出咨询", "询问线路、发车时间和站点", "掌握交通与方位词汇", "听懂数字与发车间隔"],
+  "core": [
+    {"it": "Vorrei quattro biglietti per l’autobus.", "zh": "我想买四张公交票。"},
+    {"it": "Vorrei un’informazione.", "zh": "我想咨询一下。"},
+    {"it": "Quale autobus arriva in via Solieri?", "zh": "哪路公交车到索列里街？"},
+    {"it": "A che ora parte?", "zh": "几点发车？"},
+    {"it": "Ogni cinque minuti.", "zh": "每五分钟一班。"},
+    {"it": "Da dove parte?", "zh": "从哪里发车？"},
+    {"it": "La fermata è di fronte alla stazione.", "zh": "车站在火车站对面。"}
+  ],
+  "dialogue": [
+    {"who": "亚历克斯", "it": "Buonasera. Vorrei quattro biglietti per l’autobus.", "zh": "晚上好，我想买四张公交票。"},
+    {"who": "工作人员", "it": "Ecco a lei, sono €6.", "zh": "给您，一共六欧元。"},
+    {"who": "亚历克斯", "it": "Grazie. Vorrei un’informazione. Quale autobus arriva in via Salieri?", "zh": "谢谢，我想咨询一下。哪路车到萨列里街？"},
+    {"who": "工作人员", "it": "Il numero diciotto.", "zh": "十八路。"},
+    {"who": "亚历克斯", "it": "A che ora parte?", "zh": "几点发车？"},
+    {"who": "工作人员", "it": "Il numero diciotto parte ogni cinque minuti.", "zh": "十八路每五分钟一班。"},
+    {"who": "亚历克斯", "it": "Da dove parte?", "zh": "从哪里发车？"},
+    {"who": "工作人员", "it": "La fermata è di fronte alla stazione.", "zh": "车站在火车站对面。"},
+    {"who": "亚历克斯", "it": "Grazie.", "zh": "谢谢。"}
+  ],
+  "extraTitle": "票种、交通与方位",
+  "extra": [
+    {"it": "Vorrei un biglietto di sola andata.", "zh": "我想买一张单程票。"},
+    {"it": "Vorrei un biglietto di andata e ritorno.", "zh": "我想买一张往返票。"},
+    {"it": "per il treno", "zh": "火车"},
+    {"it": "per il traghetto", "zh": "渡轮"},
+    {"it": "accanto a", "zh": "在……旁边"},
+    {"it": "vicino", "zh": "靠近"},
+    {"it": "dietro", "zh": "在……后面"},
+    {"it": "di fianco", "zh": "在侧面"}
+  ],
+  "plusTitle": "拓展：发车频率",
+  "plus": [
+    {"it": "Ogni quanto?", "zh": "多久一班？"},
+    {"it": "ogni dieci minuti", "zh": "每十分钟"},
+    {"it": "quattro volte al giorno", "zh": "每天四班"},
+    {"it": "spesso", "zh": "经常"},
+    {"it": "sempre", "zh": "总是"},
+    {"it": "mai", "zh": "从不"},
+    {"it": "L’autobus parte molto frequentemente.", "zh": "公交车班次很密。"},
+    {"it": "solo poche volte al giorno", "zh": "每天只有几班"}
+  ],
+  "tasks": [
+    "听对话，判断对话发生在一天中的什么时间。",
+    "再听一遍：亚历克斯买了几张票？要坐几路车？车站在哪里？",
+    "词义理解：Vorrei un’informazione 和 A che ora parte 是什么意思？di fronte alla stazione 里哪三个词表达了方位关系？",
+    "情景跟读：说出「我想买一张渡轮单程票」；再回答「车站在火车站后面」。"
+  ],
+  "tips": [
+    "vorrei 是「我想要」的礼貌说法，后面若再接动词，动词要用不定式，如 Vorrei andare in Via Salieri（我想去萨列里街）。",
+    "问频率用 Ogni quanto?，回答用 ogni + 时间，如 ogni cinque minuti（每五分钟）。"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "book": "get",
+  "day": 2,
+  "slug": "gt02",
+  "title": "租车出行",
+  "orig": "Hiring a car",
+  "lead": "到租车柜台开口：说明租多久、礼貌应答姓名询问、听懂价格并谈论贵不贵。",
+  "goals": ["说明要租的车和租期", "礼貌地回答对方询问姓名", "使用时间表达与价格数字", "谈论价格高低与折扣"],
+  "core": [
+    {"it": "Devo noleggiare una macchina.", "zh": "我要租一辆车。"},
+    {"it": "Quale macchina desidera?", "zh": "您想要哪辆车？"},
+    {"it": "Per quanti giorni?", "zh": "租几天？"},
+    {"it": "Per quattro giorni.", "zh": "租四天。"},
+    {"it": "Come si chiama?", "zh": "您叫什么名字？"},
+    {"it": "Ecco la carta di credito.", "zh": "这是我的信用卡。"},
+    {"it": "Ecco a lei la chiave.", "zh": "给您钥匙。"}
+  ],
+  "dialogue": [
+    {"who": "亚历克斯", "it": "Buonasera. Devo noleggiare una macchina.", "zh": "晚上好，我要租一辆车。"},
+    {"who": "柜台人员", "it": "Quale macchina desidera?", "zh": "您想要哪辆车？"},
+    {"who": "亚历克斯", "it": "Una Fiat Punto.", "zh": "一辆菲亚特 Punto。"},
+    {"who": "柜台人员", "it": "Per quanti giorni?", "zh": "租几天？"},
+    {"who": "亚历克斯", "it": "Per quattro giorni.", "zh": "四天。"},
+    {"who": "柜台人员", "it": "Come si chiama?", "zh": "请问您叫什么名字？"},
+    {"who": "亚历克斯", "it": "Alex Lassey.", "zh": "亚历克斯·拉西。"},
+    {"who": "柜台人员", "it": "Bene. Per quattro giorni sono €100.", "zh": "好的，四天共一百欧元。"},
+    {"who": "亚历克斯", "it": "Ecco la carta di credito.", "zh": "这是我的信用卡。"},
+    {"who": "柜台人员", "it": "Grazie. Ecco a lei la chiave.", "zh": "谢谢，给您钥匙。"}
+  ],
+  "extraTitle": "租期与价格数字",
+  "extra": [
+    {"it": "per un giorno", "zh": "一天"},
+    {"it": "per due giorni", "zh": "两天"},
+    {"it": "per tre giorni", "zh": "三天"},
+    {"it": "per una settimana", "zh": "一周"},
+    {"it": "un euro", "zh": "一欧元"},
+    {"it": "cinque euro", "zh": "五欧元"},
+    {"it": "cinque euro e dieci centesimi", "zh": "五欧元十分"},
+    {"it": "venti euro", "zh": "二十欧元"}
+  ],
+  "plusTitle": "拓展：谈论价格",
+  "plus": [
+    {"it": "È caro.", "zh": "太贵了。"},
+    {"it": "Non è caro.", "zh": "不贵。"},
+    {"it": "È economico.", "zh": "很便宜。"},
+    {"it": "È abbastanza economico.", "zh": "挺划算的。"},
+    {"it": "È troppo caro.", "zh": "实在太贵了。"},
+    {"it": "C’è lo sconto?", "zh": "有折扣吗？"},
+    {"it": "Ci penso.", "zh": "我考虑一下。"},
+    {"it": "Ritorno più tardi.", "zh": "我晚点再来。"}
+  ],
+  "tasks": [
+    "听对话，回答：亚历克斯想要哪辆车？",
+    "再听一遍：租车费用是多少？他如何付款？",
+    "词义理解：Come si chiama? 和 Quale macchina desidera? 分别是什么意思？Buonasera 什么时候用？",
+    "情景跟读：柜台问「租几天？」时，回答「租一天」。"
+  ],
+  "tips": [
+    "意大利语疑问词要与所修饰的名词配合：quanti giorni（阳性复数）对应「多少天」，quanto costa 对应「多少钱」。",
+    "Come si chiama? 是礼貌询问对方姓名的标准说法，直接报姓名即可，不需要完整句子。"
+  ]
+}

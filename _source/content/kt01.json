@@ -1,0 +1,73 @@
+{
+  "book": "keep",
+  "day": 1,
+  "slug": "kt01",
+  "title": "坐火车",
+  "orig": "Getting a train",
+  "lead": "在火车站买票、问车次、确认直达与返程时间，顺便把站内标识看明白。",
+  "goals": ["购买火车票并询问信息", "听懂星期与一天中的时段", "理解并使用时间表达", "辨认车站内的地点与设施"],
+  "core": [
+    {"it": "Vorrei due biglietti per Bologna.", "zh": "我想买两张去博洛尼亚的票。"},
+    {"it": "Vorrei anche delle informazioni.", "zh": "我还想咨询一些信息。"},
+    {"it": "Può prendere l’Intercity ...", "zh": "您可以坐城际列车……"},
+    {"it": "È diretto?", "zh": "是直达吗？"},
+    {"it": "E il ritorno, per quando lo vuole?", "zh": "返程票想订哪天？"},
+    {"it": "A che ora parte il primo treno da Bologna?", "zh": "从博洛尼亚出发的第一班火车几点？"}
+  ],
+  "dialogue": [
+    {"who": "约翰", "it": "Buongiorno, vorrei due biglietti per Bologna, per favore.", "zh": "您好，我想买两张去博洛尼亚的票。"},
+    {"who": "工作人员", "it": "Li vuole di andata e ritorno?", "zh": "您要往返票吗？"},
+    {"who": "约翰", "it": "Sì, grazie. E scusi, vorrei anche delle informazioni.", "zh": "是的，谢谢。打扰一下，我还想咨询一些信息。"},
+    {"who": "工作人员", "it": "Certo, mi dica pure.", "zh": "当然，请说。"},
+    {"who": "约翰", "it": "Devo essere a Bologna oggi pomeriggio, per le diciassette. Che treno devo prendere?", "zh": "我今天下午五点前必须到博洛尼亚，该坐哪班车？"},
+    {"who": "工作人员", "it": "Può prendere l’Intercity che parte alle quattordici e quindici. Arriva a Bologna alle sedici e quarantacinque.", "zh": "您可以坐十四点十五分出发的城际列车，十六点四十五分到博洛尼亚。"},
+    {"who": "约翰", "it": "Benissimo. È diretto?", "zh": "太好了，是直达吗？"},
+    {"who": "工作人员", "it": "Sì, certo. E il ritorno, per quando lo vuole?", "zh": "是的，当然。返程票想订哪天？"},
+    {"who": "约翰", "it": "Per lunedì mattina. A che ora parte il primo treno da Bologna?", "zh": "周一上午。从博洛尼亚的第一班车几点出发？"},
+    {"who": "工作人员", "it": "Alle sette e quaranta.", "zh": "七点四十分。"},
+    {"who": "约翰", "it": "E a che ora arriva?", "zh": "几点到？"},
+    {"who": "工作人员", "it": "Alle dieci e mezzo.", "zh": "十点半。"},
+    {"who": "约翰", "it": "Benissimo, grazie.", "zh": "太好了，谢谢。"},
+    {"who": "工作人员", "it": "Prego. Ecco a lei i biglietti. Sono €65.", "zh": "不客气，给您票，共六十五欧元。"},
+    {"who": "约翰", "it": "Ecco, arrivederci.", "zh": "给您钱，再见。"}
+  ],
+  "extraTitle": "时段与时间词",
+  "extra": [
+    {"it": "la mattina / di mattina", "zh": "早上／在早上"},
+    {"it": "a ora di pranzo", "zh": "午饭时间"},
+    {"it": "la sera / di sera", "zh": "晚上／在晚上"},
+    {"it": "la notte / di notte", "zh": "夜里／在夜里"},
+    {"it": "lunedì", "zh": "星期一"},
+    {"it": "martedì", "zh": "星期二"},
+    {"it": "mercoledì", "zh": "星期三"},
+    {"it": "giovedì", "zh": "星期四"},
+    {"it": "venerdì", "zh": "星期五"},
+    {"it": "sabato", "zh": "星期六"},
+    {"it": "domenica", "zh": "星期日"},
+    {"it": "verso", "zh": "大约"},
+    {"it": "prima", "zh": "之前"},
+    {"it": "dopo", "zh": "之后"},
+    {"it": "presto", "zh": "早／快"}
+  ],
+  "plusTitle": "拓展：车站里的地点",
+  "plus": [
+    {"it": "il binario", "zh": "站台"},
+    {"it": "il tabellone", "zh": "时刻表显示屏"},
+    {"it": "il sottopassaggio", "zh": "地下通道"},
+    {"it": "la biglietteria", "zh": "售票处"},
+    {"it": "la biglietteria automatica", "zh": "自动售票机"},
+    {"it": "informazioni e assistenza", "zh": "咨询与服务中心"},
+    {"it": "deposito bagagli", "zh": "行李寄存处"},
+    {"it": "polizia ferroviaria", "zh": "铁路警察"}
+  ],
+  "tasks": [
+    "听对话，回答：城际列车几点到博洛尼亚？这个时间对约翰合适吗？",
+    "再听一遍：他们周几从博洛尼亚返回？会坐第一班车吗？",
+    "词义理解：Devo essere a Bologna 和 Oggi pomeriggio 分别是什么意思？",
+    "情景跟读：对方问返程票要什么时候时，回答「午饭时间，大约十三点」；再回答「第一班去佛罗伦萨的火车从四号站台出发」。"
+  ],
+  "tips": [
+    "意大利语复数名词词尾可能是 -i 或 -e：due biglietti（两张票，阳性）、delle informazioni（一些信息，阴性）。",
+    "车站里找站台看 binario，找时刻表看 tabellone，寄存行李问 deposito bagagli。"
+  ]
+}

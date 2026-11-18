@@ -1,0 +1,66 @@
+{
+  "book": "get",
+  "day": 6,
+  "slug": "gt06",
+  "title": "餐厅用餐",
+  "orig": "Having a meal",
+  "lead": "到餐厅确认订位、听今日特色菜、点第一道菜，最后叫咖啡和账单，顺便学会问时间。",
+  "goals": ["说明已有订位及时间", "在餐厅点菜点酒", "询问今日特色菜并结账", "询问和表达时间"],
+  "core": [
+    {"it": "Ho un tavolo per le otto e mezza.", "zh": "我订了八点半的桌子。"},
+    {"it": "Vorrei del vino bianco della casa e una minerale.", "zh": "我想要本店白葡萄酒和一瓶矿泉水。"},
+    {"it": "Cosa c’è nel menù del giorno?", "zh": "今天菜单上有什么？"},
+    {"it": "Di primi, tortelli di zucca, penne o bigoli al ragù.", "zh": "第一道菜有南瓜意式饺、通心粉或肉酱粗面。"},
+    {"it": "Vorrei due caffè e il conto.", "zh": "请给我两杯咖啡和账单。"},
+    {"it": "Accettate la Visa?", "zh": "收维萨卡吗？"},
+    {"it": "Sì, non c’è problema.", "zh": "可以，没问题。"}
+  ],
+  "dialogue": [
+    {"who": "女服务员", "it": "Buonasera. Desidera?", "zh": "晚上好，您有什么需要？"},
+    {"who": "亚历克斯", "it": "Buonasera. Ho un tavolo per due per le otto e mezza.", "zh": "晚上好，我订了两个人八点半的桌子。"},
+    {"who": "女服务员", "it": "Ah, sì, Lassey.", "zh": "啊，是的，拉西先生。"},
+    {"who": "亚历克斯", "it": "Sì.", "zh": "对。"},
+    {"who": "女服务员", "it": "Prego, da questa parte.", "zh": "请往这边走。"},
+    {"who": "亚历克斯", "it": "Vorrei del vino bianco della casa e una minerale.", "zh": "我想要本店白葡萄酒和一瓶矿泉水。"},
+    {"who": "女服务员", "it": "Ecco il vino e la minerale.", "zh": "这是您的酒和水。"},
+    {"who": "亚历克斯", "it": "Grazie, cosa c’è nel menù del giorno?", "zh": "谢谢，今天的菜单有什么？"},
+    {"who": "女服务员", "it": "Di primi, tortelli di zucca, penne o bigoli al ragù.", "zh": "第一道菜有南瓜意式饺、通心粉或肉酱粗面。"},
+    {"who": "亚历克斯", "it": "Due tortelli di zucca.", "zh": "两份南瓜意式饺。"},
+    {"who": "亚历克斯", "it": "Vorrei due caffè e il conto.", "zh": "请给我两杯咖啡和账单。"},
+    {"who": "女服务员", "it": "Ecco. Sono €24.", "zh": "给您，一共二十四欧元。"},
+    {"who": "亚历克斯", "it": "Accettate la Visa?", "zh": "收维萨卡吗？"},
+    {"who": "女服务员", "it": "Sì, non c’è problema.", "zh": "可以，没问题。"}
+  ],
+  "extraTitle": "问时间与报时间",
+  "extra": [
+    {"it": "Scusi, che ore sono?", "zh": "打扰一下，几点了？"},
+    {"it": "Scusi, ha l’ora?", "zh": "打扰一下，您知道几点吗？"},
+    {"it": "A che ora è?", "zh": "几点？"},
+    {"it": "A che ora esattamente?", "zh": "具体几点？"},
+    {"it": "alle nove", "zh": "九点"},
+    {"it": "alle nove e un quarto", "zh": "九点一刻"},
+    {"it": "a mezzogiorno", "zh": "中午十二点"},
+    {"it": "all’una meno un quarto", "zh": "十二点四十五"}
+  ],
+  "plusTitle": "拓展：第二道菜与甜点",
+  "plus": [
+    {"it": "arrosto", "zh": "烤肉类"},
+    {"it": "patatine fritte", "zh": "炸薯条"},
+    {"it": "grigliata mista", "zh": "什锦烤肉"},
+    {"it": "insalata mista", "zh": "什锦沙拉"},
+    {"it": "verdure miste", "zh": "什锦蔬菜"},
+    {"it": "formaggi", "zh": "奶酪拼盘"},
+    {"it": "gelato artigianale", "zh": "手工冰淇淋"},
+    {"it": "fragole alla panna", "zh": "奶油草莓"}
+  ],
+  "tasks": [
+    "听对话，回答：今天第一道菜有几种意面可选？",
+    "再听一遍：亚历克斯订了几人的位子？他们配什么饮料？",
+    "词义理解：Vorrei due caffè e il conto、Accettate la Visa?、Sì, non c’è problema 分别是什么意思？",
+    "情景跟读：服务员问好时，说明你订了九点一刻的位子。"
+  ],
+  "tips": [
+    "传统意大利小馆（trattoria）氛围轻松，服务员常会在桌边口头介绍当日菜单，正好练习听力；开口问 Cosa c’è nel menù del giorno? 即可。",
+    "意大利语报时间用「 alle + 数字」，如 alle nove e un quarto（九点一刻）；整点前用 meno，如 all’una meno un quarto（差一刻一点）。"
+  ]
+}

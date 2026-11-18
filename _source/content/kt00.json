@@ -1,0 +1,41 @@
+{
+  "title": "实用表达速查",
+  "orig": "Useful expressions",
+  "lead": "数字、星期、月份和救急短句，随时回来查一眼。",
+  "sections": [
+    {"title": "数字", "items": [
+      {"it": "uno", "zh": "一"}, {"it": "due", "zh": "二"}, {"it": "tre", "zh": "三"}, {"it": "quattro", "zh": "四"}, {"it": "cinque", "zh": "五"},
+      {"it": "sei", "zh": "六"}, {"it": "sette", "zh": "七"}, {"it": "otto", "zh": "八"}, {"it": "nove", "zh": "九"}, {"it": "dieci", "zh": "十"},
+      {"it": "undici", "zh": "十一"}, {"it": "dodici", "zh": "十二"}, {"it": "tredici", "zh": "十三"}, {"it": "quattordici", "zh": "十四"}, {"it": "quindici", "zh": "十五"},
+      {"it": "sedici", "zh": "十六"}, {"it": "diciassette", "zh": "十七"}, {"it": "diciotto", "zh": "十八"}, {"it": "diciannove", "zh": "十九"}, {"it": "venti", "zh": "二十"},
+      {"it": "ventuno", "zh": "二十一"}, {"it": "ventidue", "zh": "二十二"}, {"it": "ventitré", "zh": "二十三"}, {"it": "ventiquattro", "zh": "二十四"}, {"it": "venticinque", "zh": "二十五"},
+      {"it": "ventisei", "zh": "二十六"}, {"it": "ventisette", "zh": "二十七"}, {"it": "ventotto", "zh": "二十八"}, {"it": "ventinove", "zh": "二十九"}, {"it": "trenta", "zh": "三十"},
+      {"it": "quaranta", "zh": "四十"}, {"it": "cinquanta", "zh": "五十"}, {"it": "sessanta", "zh": "六十"}, {"it": "settanta", "zh": "七十"}, {"it": "ottanta", "zh": "八十"},
+      {"it": "novanta", "zh": "九十"}, {"it": "cento", "zh": "一百"}, {"it": "centocinquanta", "zh": "一百五十"}, {"it": "duecento", "zh": "二百"}, {"it": "quattrocentosessantadue", "zh": "四百六十二"}, {"it": "mille", "zh": "一千"}
+    ]},
+    {"title": "星期", "items": [
+      {"it": "lunedì", "zh": "星期一"}, {"it": "martedì", "zh": "星期二"}, {"it": "mercoledì", "zh": "星期三"}, {"it": "giovedì", "zh": "星期四"}, {"it": "venerdì", "zh": "星期五"}, {"it": "sabato", "zh": "星期六"}, {"it": "domenica", "zh": "星期日"}
+    ]},
+    {"title": "月份", "items": [
+      {"it": "gennaio", "zh": "一月"}, {"it": "febbraio", "zh": "二月"}, {"it": "marzo", "zh": "三月"}, {"it": "aprile", "zh": "四月"}, {"it": "maggio", "zh": "五月"}, {"it": "giugno", "zh": "六月"},
+      {"it": "luglio", "zh": "七月"}, {"it": "agosto", "zh": "八月"}, {"it": "settembre", "zh": "九月"}, {"it": "ottobre", "zh": "十月"}, {"it": "novembre", "zh": "十一月"}, {"it": "dicembre", "zh": "十二月"}
+    ]},
+    {"title": "救急短句", "items": [
+      {"it": "Può ripetere, per favore?", "zh": "可以请您重复一遍吗？"},
+      {"it": "Un’altra volta, per favore.", "zh": "请再说一遍。"},
+      {"it": "Più piano, per favore.", "zh": "请说慢一点。"},
+      {"it": "Capisce?", "zh": "您听懂了吗？"},
+      {"it": "Capisco.", "zh": "我听懂了。"},
+      {"it": "Non capisco.", "zh": "我没听懂。"},
+      {"it": "Non lo so.", "zh": "我不知道。"},
+      {"it": "È giusto?", "zh": "对吗？"},
+      {"it": "Giusto.", "zh": "没错。"},
+      {"it": "Parla inglese/italiano?", "zh": "您说英语／意大利语吗？"},
+      {"it": "Parlo italiano, ma non molto bene.", "zh": "我会说意大利语，但说得不太好。"},
+      {"it": "Quant’è?", "zh": "多少钱？"},
+      {"it": "Dov’è ...?", "zh": "……在哪里？"},
+      {"it": "Mi dispiace.", "zh": "对不起。"},
+      {"it": "Che ore sono?", "zh": "现在几点？"}
+    ]}
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "book": "keep",
+  "day": 9,
+  "slug": "kt09",
+  "title": "深入相识",
+  "orig": "Finding out more",
+  "lead": "在朋友家的聚会上自我介绍、聊学历与职业，学会正式与非正式两种「你」的说法。",
+  "goals": ["介绍学业经历", "谈论工作与工作地点", "说明学历与职业", "辨认不同工作场所"],
+  "core": [
+    {"it": "Vorrei presentarle mia moglie Alex.", "zh": "我想向您介绍一下我的妻子亚历克斯。"},
+    {"it": "Diamoci del tu, è più facile!", "zh": "咱们用「你」相称吧，更自在！"},
+    {"it": "Abbiamo fatto l’università insieme.", "zh": "我们上大学时是同学。"},
+    {"it": "Che lavoro fai?", "zh": "你做什么工作？"},
+    {"it": "Insegno economia a Bologna.", "zh": "我在博洛尼亚教经济学。"},
+    {"it": "Che bello! Un collega!", "zh": "太好了！原来是同行！"}
+  ],
+  "dialogue": [
+    {"who": "约翰", "it": "Luca, vorrei presentarle mia moglie Alex.", "zh": "卢卡，我想向您介绍一下我的妻子亚历克斯。"},
+    {"who": "卢卡", "it": "John, diamoci del tu, che è più facile!", "zh": "约翰，咱用「你」吧，更自在！"},
+    {"who": "约翰", "it": "Sì, soprattutto per me!", "zh": "好啊，尤其对我而言！"},
+    {"who": "卢卡", "it": "Io sono Luca, piacere.", "zh": "我叫卢卡，很高兴认识你。"},
+    {"who": "亚历克斯", "it": "Io sono Alex, piacere. Sei amico di Anna e Tony, vero?", "zh": "我叫亚历克斯，很高兴认识你。你是安娜和托尼的朋友吧？"},
+    {"who": "卢卡", "it": "Sì, io e Anna abbiamo fatto l’università insieme, a Roma.", "zh": "是的，我和安娜在罗马是大学同学。"},
+    {"who": "亚历克斯", "it": "Che lavoro fai?", "zh": "你做什么工作？"},
+    {"who": "卢卡", "it": "Io insegno economia a Bologna, e tu?", "zh": "我在博洛尼亚教经济学，你呢？"},
+    {"who": "亚历克斯", "it": "Che bello! Un collega! Io insegno design in una scuola secondaria.", "zh": "太好了，原来是同行！我在一所中学教设计。"},
+    {"who": "卢卡", "it": "E tu John?", "zh": "你呢，约翰？"},
+    {"who": "约翰", "it": "Io invece faccio l’agente immobiliare.", "zh": "我是房地产经纪人。"}
+  ],
+  "extraTitle": "学历与职业",
+  "extra": [
+    {"it": "Ho preso il diploma di maturità.", "zh": "我高中毕业了。"},
+    {"it": "Sono laureato / laureata.", "zh": "我大学毕业了。"},
+    {"it": "in ingegneria", "zh": "工程学专业"},
+    {"it": "in lingue", "zh": "语言专业"},
+    {"it": "Sono laureato in matematica.", "zh": "我是数学专业毕业。"},
+    {"it": "Sono laureata in storia.", "zh": "我是历史专业毕业。"},
+    {"it": "Faccio il medico.", "zh": "我是医生。"},
+    {"it": "Faccio l’insegnante.", "zh": "我是教师。"},
+    {"it": "Faccio l’avvocato.", "zh": "我是律师。"},
+    {"it": "Faccio il barista.", "zh": "我是咖啡师。"}
+  ],
+  "plusTitle": "拓展：工作地点",
+  "plus": [
+    {"it": "in un ufficio", "zh": "在办公室"},
+    {"it": "in un ospedale", "zh": "在医院"},
+    {"it": "in una scuola", "zh": "在学校"},
+    {"it": "all’università", "zh": "在大学"},
+    {"it": "in un negozio", "zh": "在商店"},
+    {"it": "da casa", "zh": "在家办公"},
+    {"it": "in uno studio legale", "zh": "在律师事务所"},
+    {"it": "in banca", "zh": "在银行"}
+  ],
+  "tasks": [
+    "听对话，回答：卢卡和安娜怎么认识的？",
+    "再听一遍：卢卡做什么工作？亚历克斯做什么工作？",
+    "词义理解：vero? 是什么意思？约翰说 Io invece faccio l’agente immobiliare，他的工作是什么？",
+    "情景跟读：对方问「你毕业了吗？做什么工作？」时，回答「我是历史专业毕业，当老师」。"
+  ],
+  "tips": [
+    "意大利语有正式与非正式两套称呼：正式用第三人称（Che lavoro fa?），熟悉后用第二人称（Che lavoro fai?）。Diamoci del tu 就是提议改用「你」。",
+    "职业常说 Faccio il/la + 职业，如 Faccio l’insegnante（我是老师）；学历用 Sono laureato/laureata in + 专业。"
+  ]
+}

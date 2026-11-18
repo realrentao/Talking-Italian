@@ -1,0 +1,63 @@
+{
+  "book": "get",
+  "day": 5,
+  "slug": "gt05",
+  "title": "酒吧喝咖啡",
+  "orig": "Having a coffee",
+  "lead": "在意大利吧台点单：区分站吧台还是坐下来、听懂小票流程，再点一杯地道的咖啡或可颂。",
+  "goals": ["在酒吧点饮品和简餐", "说明要站吧台还是坐下", "听懂小票与找零流程", "使用更多饮食表达"],
+  "core": [
+    {"it": "Vorrei un caffè, un cappuccino e un’acqua minerale.", "zh": "我要一杯咖啡、一杯卡布奇诺和一瓶矿泉水。"},
+    {"it": "Al banco o al tavolo?", "zh": "在吧台喝还是坐下喝？"},
+    {"it": "Mi dispiace ...", "zh": "不好意思……"},
+    {"it": "Deve fare lo scontrino alla cassa.", "zh": "您需要先到收银台打小票。"},
+    {"it": "Prego, da questa parte.", "zh": "请往这边走。"},
+    {"it": "Quant’è?", "zh": "多少钱？"},
+    {"it": "Ecco il resto e lo scontrino.", "zh": "这是找零和小票。"}
+  ],
+  "dialogue": [
+    {"who": "服务员", "it": "Buongiorno, mi dica.", "zh": "早上好，您要点什么？"},
+    {"who": "约翰", "it": "Buongiorno. Vorrei un caffè, un cappuccino e un’acqua minerale.", "zh": "早上好。我要一杯咖啡、一杯卡布奇诺和一瓶矿泉水。"},
+    {"who": "服务员", "it": "Sì. Al banco o al tavolo?", "zh": "好的。在吧台喝还是坐下喝？"},
+    {"who": "约翰", "it": "Al banco.", "zh": "在吧台。"},
+    {"who": "服务员", "it": "Mi dispiace, deve fare lo scontrino alla cassa. Prego, da questa parte.", "zh": "不好意思，您需要先到收银台打小票。请往这边走。"},
+    {"who": "约翰", "it": "Un caffè, un cappuccino e un’acqua minerale. Quant’è?", "zh": "一杯咖啡、一杯卡布奇诺和一瓶矿泉水，多少钱？"},
+    {"who": "服务员", "it": "Sono €2 e 90 centesimi.", "zh": "两欧元九十欧分。"},
+    {"who": "服务员", "it": "Ecco il resto e lo scontrino.", "zh": "这是找零和小票。"},
+    {"who": "约翰", "it": "Un caffè, un cappuccino bollente e un’acqua minerale naturale.", "zh": "一杯咖啡、一杯很烫的卡布奇诺和一瓶无气泡矿泉水。"},
+    {"who": "女服务员", "it": "Ecco il caffè, il cappuccino e la minerale.", "zh": "您的咖啡、卡布奇诺和矿泉水。"},
+    {"who": "约翰", "it": "Grazie.", "zh": "谢谢。"}
+  ],
+  "extraTitle": "吧台常见饮品与简餐",
+  "extra": [
+    {"it": "Un decaffeinato, per favore.", "zh": "请给我一杯低因咖啡。"},
+    {"it": "Un té, per favore.", "zh": "请给我一杯茶。"},
+    {"it": "Una coca cola, per favore.", "zh": "请给我一杯可乐。"},
+    {"it": "Un aperitivo, per favore.", "zh": "请给我一杯开胃酒。"},
+    {"it": "Vorrei un panino.", "zh": "我要一个三明治。"},
+    {"it": "Vorrei un toast.", "zh": "我要一个烤三明治。"},
+    {"it": "Vorrei una brioche.", "zh": "我要一个可颂。"},
+    {"it": "Vorrei una pizzetta.", "zh": "我要一个小披萨。"}
+  ],
+  "plusTitle": "拓展：更具体的点单说法",
+  "plus": [
+    {"it": "Un té al limone, per favore.", "zh": "请给我一杯柠檬茶。"},
+    {"it": "Un té freddo, per favore.", "zh": "请给我一杯冰茶。"},
+    {"it": "Un macchiato caldo, per favore.", "zh": "请给我一杯热玛奇朵。"},
+    {"it": "Un macchiato freddo, per favore.", "zh": "请给我一杯加少量冷奶的玛奇朵。"},
+    {"it": "Un panino alle verdure, per favore.", "zh": "请给我一个素菜三明治。"},
+    {"it": "Una brioche alla marmellata, per favore.", "zh": "请给我一个果酱可颂。"},
+    {"it": "Una brioche vuota, per favore.", "zh": "请给我一个原味可颂。"},
+    {"it": "Una brioche alla crema, per favore.", "zh": "请给我一个奶油可颂。"}
+  ],
+  "tasks": [
+    "听对话，判断发生在一天中的哪个时段。",
+    "再听一遍：约翰选择吧台还是餐桌？他点了几种东西？",
+    "词义理解：Mi dispiace 是什么意思？Deve fare lo scontrino alla cassa 是什么意思？Ecco il resto 里服务员除了小票还给了什么？",
+    "情景跟读：服务员问好时，分别回答「要一个可颂」和「要一杯可乐和一个小披萨」。用 vorrei 开头时不必再说 per favore。"
+  ],
+  "tips": [
+    "在意大利很多咖啡馆要先到收银台买小票（scontrino），再凭票到吧台取餐；站吧台（al banco）通常比坐下（al tavolo）便宜。",
+    "以 Vorrei（我想要）开头点单本身就足够礼貌，不必每次都加 per favore。"
+  ]
+}

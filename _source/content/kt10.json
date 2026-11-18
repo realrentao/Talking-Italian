@@ -1,0 +1,66 @@
+{
+  "book": "keep",
+  "day": 10,
+  "slug": "kt10",
+  "title": "假期回顾",
+  "orig": "How was your holiday?",
+  "lead": "假期结束前和朋友聊聊：哪里最好玩、天气如何、哪里太挤，用过去时把旅途讲清楚。",
+  "goals": ["描述假期做过的事", "谈论天气", "表达喜欢或不喜欢", "描述见到的地方"],
+  "core": [
+    {"it": "Come è stata la vacanza?", "zh": "假期过得怎么样？"},
+    {"it": "È stata meravigliosa.", "zh": "太棒了。"},
+    {"it": "Che cosa ti è piaciuto di più?", "zh": "你最喜欢什么？"},
+    {"it": "Mi sono piaciute moltissimo le città d’arte.", "zh": "我特别喜欢那些艺术之城。"},
+    {"it": "I musei, le chiese, i palazzi e le piazze italiane sono bellissimi.", "zh": "意大利的博物馆、教堂、宫殿和广场美极了。"},
+    {"it": "Siamo andati anche al mare.", "zh": "我们还去了海边。"},
+    {"it": "Abbiamo fatto lunghe passeggiate in bicicletta.", "zh": "我们骑自行车走了很远。"},
+    {"it": "Avete fatto un po’ di tutto.", "zh": "你们可真是玩了个遍。"}
+  ],
+  "dialogue": [
+    {"who": "亚历克斯", "it": "Ciao, come va?", "zh": "嗨，你好吗？"},
+    {"who": "朋友", "it": "Bene. Come è stata la vacanza?", "zh": "很好。假期过得怎么样？"},
+    {"who": "亚历克斯", "it": "È stata meravigliosa.", "zh": "太棒了。"},
+    {"who": "朋友", "it": "Che cosa ti è piaciuto di più?", "zh": "你最喜欢什么？"},
+    {"who": "亚历克斯", "it": "Mi sono piaciute moltissimo le città d’arte, come Roma, Firenze, Siena.", "zh": "我特别喜欢那些艺术之城，比如罗马、佛罗伦萨、锡耶纳。"},
+    {"who": "朋友", "it": "Sì, i musei, le chiese, i palazzi e le piazze italiane sono bellissimi.", "zh": "是啊，意大利的博物馆、教堂、宫殿和广场都美极了。"},
+    {"who": "亚历克斯", "it": "Ma siamo stati anche al mare nelle Marche, e abbiamo fatto lunghe passeggiate in bicicletta sulle colline.", "zh": "不过我们还去了马尔凯的海边，还在山丘上骑了很远的自行车。"},
+    {"who": "朋友", "it": "Insomma, avete fatto un po’ di tutto. E il tempo, come è stato?", "zh": "总之你们是玩了个遍。天气怎么样？"},
+    {"who": "亚历克斯", "it": "Il tempo è stato proprio perfetto. È piovuto pochissimo.", "zh": "天气好极了，几乎没下雨。"},
+    {"who": "朋友", "it": "C’è qualcosa che non vi è piaciuto?", "zh": "有什么让你们不喜欢的吗？"},
+    {"who": "亚历克斯", "it": "A volte c’erano troppi turisti, come per esempio a Venezia. C’era un sacco di gente.", "zh": "有时候游客太多了，比如威尼斯，人山人海。"},
+    {"who": "朋友", "it": "È vero, Venezia d’estate è veramente affollata. D’inverno però Venezia è fantastica: è una città da sogno!", "zh": "确实，夏天的威尼斯真的很挤。不过冬天的威尼斯很棒，是座梦幻之城！"}
+  ],
+  "extraTitle": "喜欢与不喜欢（过去时）",
+  "extra": [
+    {"it": "Mi è piaciuto il museo.", "zh": "我喜欢那个博物馆。"},
+    {"it": "La città non mi è piaciuta per niente.", "zh": "我一点也不喜欢那座城市。"},
+    {"it": "Mi è piaciuta la visita guidata.", "zh": "我喜欢那次导览。"},
+    {"it": "Non mi sono piaciute le code.", "zh": "我不喜欢排队。"},
+    {"it": "Mi è piaciuta la vacanza.", "zh": "我喜欢这次假期。"},
+    {"it": "Ti è piaciuta la vacanza.", "zh": "你喜欢这次假期。"},
+    {"it": "Gli è piaciuta la vacanza.", "zh": "他喜欢这次假期。"},
+    {"it": "Ci è piaciuta la vacanza.", "zh": "我们喜欢这次假期。"},
+    {"it": "Vi è piaciuta la vacanza.", "zh": "你们喜欢这次假期。"}
+  ],
+  "plusTitle": "拓展：描述地点",
+  "plus": [
+    {"it": "una città bellissima", "zh": "一座非常美的城市"},
+    {"it": "una piccola città / una cittadina", "zh": "一座小城"},
+    {"it": "un paesino tipico", "zh": "一座典型的小镇"},
+    {"it": "una città turistica", "zh": "旅游城市"},
+    {"it": "il centro storico", "zh": "老城区"},
+    {"it": "un posto veramente caotico", "zh": "非常嘈杂的地方"},
+    {"it": "un posto tranquillissimo", "zh": "非常安静的地方"},
+    {"it": "un posto proprio isolato", "zh": "很偏僻的地方"}
+  ],
+  "tasks": [
+    "听对话，回答：亚历克斯最喜欢什么？她和约翰在马尔凯做了什么？",
+    "再听一遍：天气如何？下雨了吗？",
+    "词义理解：A volte c’erano troppi turisti、C’era un sacco di gente、È vero, Venezia d’estate è veramente affollata 是什么意思？",
+    "情景跟读：朋友问「假期过得怎么样？」时，分别回答「我们非常喜欢」和「我不喜欢」。"
+  ],
+  "tips": [
+    "以 essere 作助动词的过去时，过去分词要与主语性数一致：la vacanza è stata（阴性单数）、siamo andati（阳性复数）。",
+    "piacere 的过去时按「东西」变化：Mi è piaciuto il museo（阳性单数）、Mi sono piaciute le città（阴性复数）。"
+  ]
+}

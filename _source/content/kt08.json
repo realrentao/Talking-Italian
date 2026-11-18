@@ -1,0 +1,72 @@
+{
+  "book": "keep",
+  "day": 8,
+  "slug": "kt08",
+  "title": "结交朋友",
+  "orig": "Making friends",
+  "lead": "早餐桌上的闲聊：介绍自己和同伴、聊从哪儿来、家人做什么，学会得体地「很高兴认识你」。",
+  "goals": ["介绍自己与他人", "谈论国籍、家人与朋友", "询问并说明来自哪里", "使用更多家庭与朋友表达"],
+  "core": [
+    {"it": "E voi siete qui in vacanza o per lavoro?", "zh": "你们是来度假还是出差？"},
+    {"it": "Di dove siete?", "zh": "你们从哪里来？"},
+    {"it": "Sono di Torino.", "zh": "我来自都灵。"},
+    {"it": "E lei è polacca.", "zh": "她是波兰人。"},
+    {"it": "Io mi chiamo Carlo.", "zh": "我叫卡洛。"},
+    {"it": "E lei è Natasha.", "zh": "她是娜塔莎。"},
+    {"it": "Piacere!", "zh": "很高兴认识你！"}
+  ],
+  "dialogue": [
+    {"who": "图菲先生", "it": "Buongiorno. Anche a voi piace il caffè italiano!", "zh": "早上好，你们也喜欢意大利咖啡啊！"},
+    {"who": "约翰", "it": "Sì, molto.", "zh": "是的，非常喜欢。"},
+    {"who": "图菲先生", "it": "È la prima volta che visitate Verona?", "zh": "这是你们第一次来维罗纳吗？"},
+    {"who": "约翰", "it": "Sì. Siamo stati a Firenze e a Roma, anche Verona è molto bella. E voi siete qui in vacanza o per lavoro?", "zh": "是的，我们去过佛罗伦萨和罗马，维罗纳也很漂亮。你们是来度假还是出差？"},
+    {"who": "图菲先生", "it": "In vacanza e per motivi di famiglia. Siamo qui per il matrimonio di mia sorella.", "zh": "度假，也有家事。我们来参加我姐姐的婚礼。"},
+    {"who": "约翰", "it": "Che bello! Quand’è il matrimonio?", "zh": "太好了！婚礼什么时候？"},
+    {"who": "图菲先生", "it": "È oggi pomeriggio.", "zh": "就在今天下午。"},
+    {"who": "约翰", "it": "Di dove siete?", "zh": "你们从哪里来？"},
+    {"who": "图菲先生", "it": "Io sono di Torino e lei è polacca. E voi?", "zh": "我来自都灵，她是波兰人。你们呢？"},
+    {"who": "约翰", "it": "Io sono gallese e mia moglie è di Londra.", "zh": "我是威尔士人，我妻子来自伦敦。"},
+    {"who": "图菲先生", "it": "Davvero? Io mi chiamo Carlo e lei è Natasha. Piacere!", "zh": "真的吗？我叫卡洛，她是娜塔莎。很高兴认识你们！"},
+    {"who": "约翰", "it": "Io sono John e questa è Alex. Piacere!", "zh": "我叫约翰，这位是亚历克斯。很高兴认识你们！"},
+    {"who": "亚历克斯／娜塔莎", "it": "Piacere! Piacere!", "zh": "很高兴认识你！"}
+  ],
+  "extraTitle": "国籍与来自哪里",
+  "extra": [
+    {"it": "Di dove sei?", "zh": "你从哪里来？（单数）"},
+    {"it": "Di dove siete?", "zh": "你们从哪里来？（复数）"},
+    {"it": "Sono inglese.", "zh": "我是英国人。"},
+    {"it": "Sono spagnolo / spagnola.", "zh": "我是西班牙人。"},
+    {"it": "Sono americano / americana.", "zh": "我是美国人。"},
+    {"it": "Sono francese.", "zh": "我是法国人。"},
+    {"it": "Sono greco / greca.", "zh": "我是希腊人。"},
+    {"it": "Sono russo / russa.", "zh": "我是俄罗斯人。"},
+    {"it": "Sono tedesco / tedesca.", "zh": "我是德国人。"},
+    {"it": "Sono italiano / italiana.", "zh": "我是意大利人。"},
+    {"it": "l’Italia", "zh": "意大利"},
+    {"it": "gli Stati Uniti", "zh": "美国"},
+    {"it": "la Francia", "zh": "法国"},
+    {"it": "l’Inghilterra", "zh": "英国"},
+    {"it": "il Messico", "zh": "墨西哥"}
+  ],
+  "plusTitle": "拓展：家人与朋友",
+  "plus": [
+    {"it": "il mio amico", "zh": "我的男性朋友"},
+    {"it": "la mia amica", "zh": "我的女性朋友"},
+    {"it": "mia madre", "zh": "我母亲"},
+    {"it": "mio padre", "zh": "我父亲"},
+    {"it": "mio fratello", "zh": "我兄弟"},
+    {"it": "mia sorella", "zh": "我姐妹"},
+    {"it": "mia moglie", "zh": "我妻子"},
+    {"it": "mio marito", "zh": "我丈夫"}
+  ],
+  "tasks": [
+    "听对话，回答：这是约翰第一次来维罗纳吗？卡洛为什么在维罗纳？",
+    "再听一遍：卡洛和娜塔莎因为什么家事来到这里？他们来自哪里？",
+    "词义理解：Sì. Siamo stati a Firenze e a Roma, anche Verona è molto bella 是什么意思？什么时候说 Piacere？in vacanza o per lavoro 是什么意思？",
+    "情景跟读：对方问你们从哪里来时，回答「我是意大利人，她是美国人」；再回答「我是德国人，他是英国人」。"
+  ],
+  "tips": [
+    "自我介绍可以说 Sono Anna 或 Mi chiamo Anna；介绍别人用 Lui è Giorgio / Questo è Giorgio（男）或 Lei è Emma / Questa è Emma（女）。",
+    "询问国籍和来自哪里在意大利语里几乎是一回事：Di dove sei? 和 Di che nazionalità sei? 都可以回答 Sono inglese。"
+  ]
+}

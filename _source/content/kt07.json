@@ -1,0 +1,67 @@
+{
+  "book": "keep",
+  "day": 7,
+  "slug": "kt07",
+  "title": "本地节庆",
+  "orig": "Going to a local festival",
+  "lead": "被窗外噪音吵醒？问清昨晚是什么活动、有什么好玩的、要不要门票，把节庆聊明白。",
+  "goals": ["就活动提问", "听懂简短的活动安排", "表达知道或不知道", "描述本地休闲活动"],
+  "core": [
+    {"it": "Buongiorno, come state?", "zh": "早上好，你们好吗？"},
+    {"it": "Insomma.", "zh": "还行吧。"},
+    {"it": "C’era un rumore tremendo.", "zh": "吵得不得了。"},
+    {"it": "Lo so.", "zh": "我知道。"},
+    {"it": "Era il festival latino-americano.", "zh": "是拉丁美洲节。"},
+    {"it": "Che cosa fanno?", "zh": "他们做些什么？"},
+    {"it": "Un po’ di tutto.", "zh": "什么都有一些。"},
+    {"it": "Balli latino-americani, tombola, dibattiti ...", "zh": "拉丁舞、宾果游戏、辩论……"},
+    {"it": "... e poi l’ultima sera ci sono sempre i fuochi.", "zh": "……最后一晚总有烟花。"}
+  ],
+  "dialogue": [
+    {"who": "亚历克斯", "it": "Buongiorno.", "zh": "早上好。"},
+    {"who": "酒店前台", "it": "Buongiorno, come state?", "zh": "早上好，二位还好吗？"},
+    {"who": "亚历克斯", "it": "Insomma. C’era un rumore tremendo ieri sera!", "zh": "还行吧，昨晚吵得不得了！"},
+    {"who": "酒店前台", "it": "Lo so. Era il festival latino-americano. Dura una settimana.", "zh": "我知道，是拉丁美洲节，持续一周。"},
+    {"who": "亚历克斯", "it": "E a che ora finisce?", "zh": "几点结束？"},
+    {"who": "酒店前台", "it": "Mah, non saprei, tardi.", "zh": "嗯，我说不好，挺晚的。"},
+    {"who": "亚历克斯", "it": "Che cosa fanno?", "zh": "都有什么活动？"},
+    {"who": "酒店前台", "it": "Un po’ di tutto. Balli latino-americani, tombola, dibattiti e poi l’ultima sera ci sono sempre i fuochi.", "zh": "什么都有：拉丁舞、宾果、辩论，最后一晚还有烟花。"},
+    {"who": "亚历克斯", "it": "Si può anche mangiare?", "zh": "那儿也能吃东西吗？"},
+    {"who": "酒店前台", "it": "Sì, ci sono vari stand in cui si possono mangiare piatti tipici a prezzi economici.", "zh": "可以，有好几个摊位能便宜地吃到当地特色菜。"},
+    {"who": "亚历克斯", "it": "L’ingresso è gratuito?", "zh": "门票免费吗？"},
+    {"who": "酒店前台", "it": "No, costa 5 euro a testa.", "zh": "不免费，每人五欧元。"}
+  ],
+  "extraTitle": "知道、不知道与提问",
+  "extra": [
+    {"it": "Lo sai?", "zh": "你知道吗？"},
+    {"it": "Lo so.", "zh": "我知道。"},
+    {"it": "Non lo so.", "zh": "我不知道。"},
+    {"it": "Non mi ricordo.", "zh": "我不记得了。"},
+    {"it": "Quanto costa?", "zh": "多少钱？"},
+    {"it": "Che cos’è?", "zh": "这是什么？"},
+    {"it": "Dov’è?", "zh": "在哪儿？"},
+    {"it": "Perché non è gratuito?", "zh": "为什么不免费？"},
+    {"it": "Come stai?", "zh": "你好吗？"}
+  ],
+  "plusTitle": "拓展：本地休闲活动",
+  "plus": [
+    {"it": "una fiera", "zh": "集市／展会"},
+    {"it": "uno spettacolo all’aperto", "zh": "露天演出"},
+    {"it": "C’è arte.", "zh": "有艺术展。"},
+    {"it": "C’è musica.", "zh": "有音乐。"},
+    {"it": "C’è gastronomia.", "zh": "有美食。"},
+    {"it": "Ci sono le giostre.", "zh": "有游乐设施。"},
+    {"it": "Ci sono eventi sportivi.", "zh": "有体育活动。"},
+    {"it": "C’è un mercatino.", "zh": "有跳蚤市场。"}
+  ],
+  "tasks": [
+    "听对话，回答：昨晚为什么那么吵？噪音几点停？",
+    "再听一遍：节庆上有什么活动？能在那里吃东西吗？",
+    "词义理解：Lo so. Era il festival latino-americano、Si può anche mangiare?、No, costa 5 euro a testa 分别是什么意思？",
+    "情景跟读：别人问「门票免费吗？」时，分别回答「我不知道」和「我不记得了」。"
+  ],
+  "tips": [
+    "意大利语双辅音要读清楚：insomma 有两个 m，balli 有两个 l，dibattiti 有两个 t。",
+    "si + 动词是常见的无人称形式，表示「人们／大家可以」，如 Si può mangiare（可以吃饭）、Si può comprare（可以买）。"
+  ]
+}

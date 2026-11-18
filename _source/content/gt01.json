@@ -1,0 +1,61 @@
+{
+  "book": "get",
+  "day": 1,
+  "slug": "gt01",
+  "title": "打车出行",
+  "orig": "Getting a taxi",
+  "lead": "从报出目的地到听懂车费，掌握打车时最实用的礼貌表达；再学会说明一个地点是远是近。",
+  "goals": ["说清目的地与街道门牌号", "听懂并确认车费金额", "礼貌地问候、道谢与道别", "询问并说明地点远近"],
+  "core": [
+    {"it": "Devo andare a ...", "zh": "我要去……"},
+    {"it": "In quale via?", "zh": "在哪条街？"},
+    {"it": "Al numero otto di via Pace.", "zh": "佩切街 8 号。"},
+    {"it": "Ecco l’albergo.", "zh": "酒店到了。"},
+    {"it": "Sono dieci euro.", "zh": "十欧元。"},
+    {"it": "Grazie, arrivederci.", "zh": "谢谢，再见。"}
+  ],
+  "dialogue": [
+    {"who": "出租车司机", "it": "Buongiorno.", "zh": "您好。"},
+    {"who": "约翰", "it": "Buongiorno. Devo andare all’albergo Regina Margherita.", "zh": "您好，我要去玛格丽塔皇后酒店。"},
+    {"who": "出租车司机", "it": "In quale via?", "zh": "在哪条街？"},
+    {"who": "约翰", "it": "In via Pace.", "zh": "佩切街。"},
+    {"who": "出租车司机", "it": "A quale numero è l’albergo?", "zh": "酒店是几号？"},
+    {"who": "约翰", "it": "Al numero otto, credo.", "zh": "我记得是八号。"},
+    {"who": "出租车司机", "it": "Va bene, al numero otto di via Pace.", "zh": "好的，佩切街八号。"},
+    {"who": "出租车司机", "it": "Ecco l’albergo Regina Margherita. Sono €10.", "zh": "玛格丽塔皇后酒店到了。车费十欧元。"},
+    {"who": "约翰", "it": "Bene, grazie. Ecco a lei.", "zh": "好的，谢谢，给您。"},
+    {"who": "出租车司机", "it": "Grazie, arrivederci.", "zh": "谢谢，再见。"}
+  ],
+  "extraTitle": "更多目的地与地址用语",
+  "extra": [
+    {"it": "Alla stazione, per favore.", "zh": "请送我去火车站。"},
+    {"it": "All’aeroporto, per favore.", "zh": "请送我去机场。"},
+    {"it": "Al museo, per favore.", "zh": "请送我去博物馆。"},
+    {"it": "Alla galleria d’arte, per favore.", "zh": "请送我去美术馆。"},
+    {"it": "piazza", "zh": "广场"},
+    {"it": "viale", "zh": "大道"},
+    {"it": "piazzetta", "zh": "小广场"},
+    {"it": "vicolo", "zh": "小巷"}
+  ],
+  "plusTitle": "拓展：远近怎么说",
+  "plus": [
+    {"it": "È vicino?", "zh": "近吗？"},
+    {"it": "È lontano?", "zh": "远吗？"},
+    {"it": "È vicinissimo.", "zh": "非常近。"},
+    {"it": "È abbastanza lontano.", "zh": "挺远的。"},
+    {"it": "Quanto ci vuole?", "zh": "要多久？"},
+    {"it": "Dieci minuti a piedi.", "zh": "步行十分钟。"},
+    {"it": "Dieci minuti in macchina.", "zh": "开车十分钟。"},
+    {"it": "È troppo lontano a piedi.", "zh": "太远了，走路去不了。"}
+  ],
+  "tasks": [
+    "听第一段对话，回答：约翰要去哪里？",
+    "再听一遍：酒店的确切地址是什么？车费多少？",
+    "词义理解：Bene, grazie. Ecco a lei 是什么意思？什么时候用 Grazie, arrivederci？",
+    "情景跟读：司机问「在哪条街？」时，告诉对方你要去卡武尔大道，别忘说「请」。"
+  ],
+  "tips": [
+    "意大利语名词分阴阳：via（街道）是阴性，albergo（酒店）是阳性，冠词会随之变化。",
+    "报地址的习惯顺序是「街道 + 门牌号」，如 via Pace, 8；口语中常说 al numero otto di via Pace。"
+  ]
+}

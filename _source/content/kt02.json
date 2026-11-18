@@ -1,0 +1,71 @@
+{
+  "book": "keep",
+  "day": 2,
+  "slug": "kt02",
+  "title": "问路",
+  "orig": "Can you tell us the way?",
+  "lead": "在街上开口问路，听懂「右转、直行到第三个红绿灯」，并学会用礼貌的命令式指路。",
+  "goals": ["询问并听懂路线", "理解并使用命令式", "掌握更多指路表达", "描述路口与街区位置"],
+  "core": [
+    {"it": "Mi scusi.", "zh": "打扰一下。"},
+    {"it": "Ci può indicare la strada per Piazza Nettuno?", "zh": "您能告诉我们去海神广场怎么走吗？"},
+    {"it": "È facile, ma un po’ lunga.", "zh": "不难找，不过有点远。"},
+    {"it": "Giri a destra.", "zh": "向右转。"},
+    {"it": "Continui dritto ... al terzo semaforo.", "zh": "一直直走……到第三个红绿灯。"},
+    {"it": "Giri a sinistra.", "zh": "向左转。"},
+    {"it": "Alla fine di ...", "zh": "在……的尽头。"},
+    {"it": "Sono circa ...", "zh": "大约……"},
+    {"it": "Gli autobus si fermano in Piazza Nettuno.", "zh": "公交车在海神广场停靠。"}
+  ],
+  "dialogue": [
+    {"who": "保罗", "it": "Mi scusi.", "zh": "打扰一下。"},
+    {"who": "路人", "it": "Sì, mi dica?", "zh": "好的，您说？"},
+    {"who": "保罗", "it": "Ci può indicare la strada per Piazza Nettuno?", "zh": "您能告诉我们去海神广场怎么走吗？"},
+    {"who": "路人", "it": "Be’, è facile, ma un po’ lunga. Giri a destra, in Via Marconi. Continui dritto fino al terzo semaforo. Giri a sinistra in via Ugo Bassi e continui dritto. Piazza Nettuno è alla fine di via Ugo Bassi, a destra.", "zh": "嗯，不难找，不过有点远。右转进马可尼街，一直走到第三个红绿灯，左转进乌戈·巴西街再直走。海神广场就在乌戈·巴西街尽头右边。"},
+    {"who": "保罗", "it": "Grazie. È lontano?", "zh": "谢谢，远吗？"},
+    {"who": "路人", "it": "Sono circa 20 minuti a piedi.", "zh": "步行大约二十分钟。"},
+    {"who": "保罗", "it": "E ci sono autobus per arrivare a Piazza Nettuno?", "zh": "有到海神广场的公交车吗？"},
+    {"who": "路人", "it": "Sì. La fermata è in via Marconi, tutti gli autobus si fermano a Piazza Nettuno.", "zh": "有，车站在马可尼街，所有公交车都在海神广场停。"},
+    {"who": "保罗", "it": "Grazie tante, arrivederci.", "zh": "非常感谢，再见。"},
+    {"who": "路人", "it": "Arrivederci.", "zh": "再见。"}
+  ],
+  "extraTitle": "礼貌命令式：指路常用动词",
+  "extra": [
+    {"it": "prenda", "zh": "拿／乘坐"},
+    {"it": "vada", "zh": "走／去"},
+    {"it": "attraversi", "zh": "穿过"},
+    {"it": "salga sull’autobus", "zh": "上公交车"},
+    {"it": "Scenda alla stazione.", "zh": "在车站下车。"},
+    {"it": "Compri il biglietto giornaliero.", "zh": "买一张日票。"},
+    {"it": "Guardi la piantina.", "zh": "看一下地图。"},
+    {"it": "Aspetti!", "zh": "等一下！"},
+    {"it": "Me lo mostri sulla piantina.", "zh": "在地图上指给我看。"},
+    {"it": "venga", "zh": "过来"},
+    {"it": "Non giri.", "zh": "不要转弯。"},
+    {"it": "Non segua questa strada.", "zh": "不要走这条路。"},
+    {"it": "Non prenda il taxi.", "zh": "别打车。"},
+    {"it": "Non chieda all’autista!", "zh": "别问司机！"}
+  ],
+  "plusTitle": "拓展：更多指路词汇",
+  "plus": [
+    {"it": "all’angolo", "zh": "在拐角处"},
+    {"it": "le strisce pedonali", "zh": "斑马线"},
+    {"it": "l’incrocio", "zh": "十字路口"},
+    {"it": "la traversa", "zh": "小横街"},
+    {"it": "il primo / la prima", "zh": "第一"},
+    {"it": "il secondo / la seconda", "zh": "第二"},
+    {"it": "il terzo / la terza", "zh": "第三"},
+    {"it": "il quarto / la quarta", "zh": "第四"},
+    {"it": "il quinto / la quinta", "zh": "第五"}
+  ],
+  "tasks": [
+    "听对话，回答：步行到海神广场要多久？哪路公交会停在那里？",
+    "再听一遍：海神广场在乌戈·巴西街的什么位置？得到指路后保罗又问了哪两件事？",
+    "词义理解：什么时候用 Mi scusi?？Ci può indicare la strada per Piazza Nettuno 是什么意思？fino 在 continui dritto fino al terzo semaforo 里是什么意思？",
+    "情景跟读：路人指完路后，请对方等一下并在地图上指给你看；再建议一位游客别坐公交、改打车。"
+  ],
+  "tips": [
+    "命令式用来指路和提要求，正式场合用 Giri a destra（右转）、Continui dritto（直走）；否定形式是在动词前加 Non，如 Non giri。",
+    "Ci può indicare...? 里的 ci 表示「我们（我和同伴）」，换成 mi 变成「我」，句子其余部分不变。"
+  ]
+}

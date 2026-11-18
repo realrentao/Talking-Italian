@@ -1,0 +1,61 @@
+{
+  "book": "get",
+  "day": 4,
+  "slug": "gt04",
+  "title": "预订房间",
+  "orig": "Booking a room",
+  "lead": "订酒店不再犯难：说清房型和入住时间、问清是否含早餐，并听懂前台递交证件与钥匙的说法。",
+  "goals": ["说明想要的房型和入住日期", "询问房价包含哪些服务", "听懂并回应护照与钥匙交接", "描述酒店设施"],
+  "core": [
+    {"it": "Vorrei una camera doppia per questa sera e domani sera.", "zh": "我想要一间双人间，今晚和明晚住。"},
+    {"it": "Ho una camera doppia libera da stasera.", "zh": "从今晚起有一间双人间空着。"},
+    {"it": "La colazione è compresa?", "zh": "含早餐吗？"},
+    {"it": "Avete il passaporto?", "zh": "带护照了吗？"},
+    {"it": "Sì, ecco i passaporti.", "zh": "带了，给您护照。"},
+    {"it": "Ecco le chiavi.", "zh": "给您钥匙。"},
+    {"it": "Arrivederci e grazie.", "zh": "再见，谢谢。"}
+  ],
+  "dialogue": [
+    {"who": "莫兰夫人", "it": "Buongiorno!", "zh": "您好！"},
+    {"who": "约翰", "it": "Buongiorno, signora. Vorrei una camera doppia per questa sera e domani sera.", "zh": "您好，夫人。我想要一间双人间，今晚和明晚住。"},
+    {"who": "莫兰夫人", "it": "Sì. Ho una camera doppia libera da questa sera.", "zh": "有的，从今晚起有一间双人间空着。"},
+    {"who": "约翰", "it": "Bene. Quanto costa?", "zh": "好的，多少钱？"},
+    {"who": "莫兰夫人", "it": "Sono €80 per notte.", "zh": "每晚八十欧元。"},
+    {"who": "约翰", "it": "La colazione è compresa?", "zh": "包含早餐吗？"},
+    {"who": "莫兰夫人", "it": "Sì, la prima colazione è compresa. Avete il passaporto?", "zh": "包含，早餐已含在房价里。您带护照了吗？"},
+    {"who": "约翰", "it": "Sì, ecco i passaporti.", "zh": "带了，给您。"},
+    {"who": "莫兰夫人", "it": "Benissimo, ecco le chiavi.", "zh": "好的，给您钥匙。"},
+    {"who": "约翰", "it": "Grazie. A stasera.", "zh": "谢谢，晚上见。"},
+    {"who": "莫兰夫人", "it": "Arrivederci e grazie.", "zh": "再见，谢谢。"}
+  ],
+  "extraTitle": "房型与住宿方案",
+  "extra": [
+    {"it": "Vorrei una camera singola.", "zh": "我想要一间单人间。"},
+    {"it": "Vorrei una camera con doccia.", "zh": "我想要一间带淋浴的房间。"},
+    {"it": "Vorrei una camera con bagno.", "zh": "我想要一间带独立卫浴的房间。"},
+    {"it": "a mezza pensione", "zh": "半食宿（含早晚餐）"},
+    {"it": "a pensione completa", "zh": "全食宿（含三餐）"},
+    {"it": "camera con vista sul mare", "zh": "海景房"}
+  ],
+  "plusTitle": "拓展：描述酒店设施",
+  "plus": [
+    {"it": "albergo con piscina", "zh": "带游泳池的酒店"},
+    {"it": "con parcheggio", "zh": "带停车位"},
+    {"it": "con aria condizionata in camera", "zh": "房间有空调"},
+    {"it": "con ristorante", "zh": "带餐厅"},
+    {"it": "con spiaggia privata", "zh": "有私家海滩"},
+    {"it": "con accesso internet", "zh": "可上网"},
+    {"it": "con servizio in camera", "zh": "提供客房服务"},
+    {"it": "un albergo a tre stelle", "zh": "三星级酒店"}
+  ],
+  "tasks": [
+    "听对话，回答：房价包含早餐吗？",
+    "再听一遍：约翰订了什么房型？何时入住？每晚多少钱？",
+    "词义理解：colazione 是什么意思？ecco i passaporti 是什么意思？莫兰夫人说完 Benissimo, ecco le chiavi 后递给约翰的是什么？",
+    "情景跟读：向莫兰夫人问好，并要一间带海景的单人房。"
+  ],
+  "tips": [
+    "意大利酒店前台常说 Avete il passaporto?（带护照了吗）；递交东西时说 Ecco...，如 Ecco le chiavi（给您钥匙）。",
+    "a mezza pensione 指含早餐和晚餐，a pensione completa 指三餐全包，订房时要问清楚。"
+  ]
+}

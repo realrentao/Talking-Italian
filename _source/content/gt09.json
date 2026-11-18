@@ -1,0 +1,72 @@
+{
+  "book": "get",
+  "day": 9,
+  "slug": "gt09",
+  "title": "看歌剧",
+  "orig": "Going to the opera",
+  "lead": "在维罗纳竞技场问演出、挑座位、问剧情和开演时间，再学会评价一部戏好不好看。",
+  "goals": ["询问上演剧目并购票", "询问剧情简介", "掌握剧院座位与剧种词汇", "描述电影、戏剧或歌剧"],
+  "core": [
+    {"it": "Cosa c’è in programma?", "zh": "有什么演出安排？"},
+    {"it": "Non siamo mai stati all’opera.", "zh": "我们从没看过歌剧。"},
+    {"it": "C’è l’Aida.", "zh": "上演《阿依达》。"},
+    {"it": "Che biglietti avete per domani sera?", "zh": "明晚还有哪些票？"},
+    {"it": "Ci sono delle gradinate numerate.", "zh": "有编号的阶梯座位。"},
+    {"it": "Per farvi un’idea.", "zh": "让你们先有个概念。"},
+    {"it": "Vanno bene.", "zh": "这些就挺好。"},
+    {"it": "Di che cosa parla l’opera?", "zh": "这部歌剧讲什么？"},
+    {"it": "È una storia d’amore.", "zh": "是个爱情故事。"},
+    {"it": "Il programma è in vendita.", "zh": "节目单有售。"},
+    {"it": "Ecco i biglietti e il programma.", "zh": "给您票和节目单。"},
+    {"it": "A che ora comincia?", "zh": "几点开演？"}
+  ],
+  "dialogue": [
+    {"who": "约翰", "it": "Buongiorno. Che cosa c’è in programma? Non siamo mai stati all’opera.", "zh": "您好，有什么演出？我们从来没看过歌剧。"},
+    {"who": "售票员", "it": "Domani sera c’è Aida. È un classico.", "zh": "明晚演《阿依达》，是经典剧目。"},
+    {"who": "约翰", "it": "Che biglietti avete per domani sera?", "zh": "明晚还有哪些票？"},
+    {"who": "售票员", "it": "Ci sono delle gradinate numerate a €94. Ecco, sono qui, per farvi un’idea.", "zh": "有九十四欧元的编号阶梯座。给您看看，先有个概念。"},
+    {"who": "约翰", "it": "Vanno bene.", "zh": "这些就挺好。"},
+    {"who": "约翰", "it": "Di che cosa parla l’opera?", "zh": "这部歌剧讲什么？"},
+    {"who": "售票员", "it": "È una storia d’amore. Il programma è in vendita a €8.", "zh": "是个爱情故事。节目单售价八欧元。"},
+    {"who": "约翰", "it": "Grazie. Allora in totale sono €188 più €8, €196?", "zh": "谢谢，那一共是一百八十八加八，一百九十六欧元？"},
+    {"who": "售票员", "it": "Sì, grazie. Ecco i biglietti e il programma.", "zh": "对，谢谢。给您票和节目单。"},
+    {"who": "约翰", "it": "A che ora comincia?", "zh": "几点开演？"},
+    {"who": "售票员", "it": "Comincia alle 9 e 15.", "zh": "九点一刻开演。"},
+    {"who": "约翰", "it": "E in caso di maltempo?", "zh": "如果天气不好呢？"},
+    {"who": "售票员", "it": "Anche in caso di maltempo, l’opera comincia alle 9 e 15.", "zh": "即使天气不好，歌剧也在九点一刻照常开演。"},
+    {"who": "约翰", "it": "Benissimo, grazie e arrivederci.", "zh": "太好了，谢谢，再见。"},
+    {"who": "售票员", "it": "Arrivederci.", "zh": "再见。"}
+  ],
+  "extraTitle": "影院、剧院与剧种",
+  "extra": [
+    {"it": "Che film ci sono in programma?", "zh": "有哪些电影上映？"},
+    {"it": "la poltrona in platea", "zh": "一楼池座"},
+    {"it": "in galleria", "zh": "楼座"},
+    {"it": "la biglietteria", "zh": "售票处"},
+    {"it": "un film drammatico", "zh": "剧情片"},
+    {"it": "una tragedia", "zh": "悲剧"},
+    {"it": "una commedia", "zh": "喜剧"},
+    {"it": "un giallo", "zh": "悬疑片"}
+  ],
+  "plusTitle": "拓展：观后感怎么说",
+  "plus": [
+    {"it": "È appassionante.", "zh": "很扣人心弦。"},
+    {"it": "È noioso.", "zh": "很无聊。"},
+    {"it": "È divertente.", "zh": "很有趣。"},
+    {"it": "Non è il mio genere.", "zh": "不是我喜欢的类型。"},
+    {"it": "È troppo lungo.", "zh": "太长了。"},
+    {"it": "È troppo violento.", "zh": "太暴力了。"},
+    {"it": "Mi è piaciuto molto.", "zh": "我非常喜欢。"},
+    {"it": "Mi ha deluso.", "zh": "让我很失望。"}
+  ],
+  "tasks": [
+    "听对话，回答：歌剧几点开演？",
+    "再听一遍：约翰以前看过歌剧吗？《阿依达》讲的是什么？",
+    "词义理解：Che biglietti avete per domani sera?、Vanno bene、Il programma è in vendita 分别是什么意思？",
+    "情景跟读：售票员问明晚要什么票时，回答要两张；再扮演售票员，回答游客「这部电影讲什么？」的问题。"
+  ],
+  "tips": [
+    "意大利的歌剧院常按区域售票：platea（池座）、galleria（楼座）、gradinate numerate（编号阶梯座），订票时要问清楚。",
+    "描述观感用 È + 形容词，如 È appassionante（扣人心弦）；表达 personal 喜好可用 Mi è piaciuto molto（我很喜欢）。"
+  ]
+}

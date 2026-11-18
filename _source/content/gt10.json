@@ -1,0 +1,66 @@
+{
+  "book": "get",
+  "day": 10,
+  "slug": "gt10",
+  "title": "药店买药",
+  "orig": "Going to the chemist’s",
+  "lead": "身体不舒服时怎么说？学会描述症状、询问服药剂量、听懂药剂师叮嘱，安心在意大利买药。",
+  "goals": ["说明身体不适并听懂药品类型", "询问服药剂量与频次", "描述常见疾病和药品", "描述各种症状"],
+  "core": [
+    {"it": "Ho un problema.", "zh": "我有点不舒服。"},
+    {"it": "un forte raffreddore", "zh": "重感冒"},
+    {"it": "Cosa mi consiglia?", "zh": "您有什么建议？"},
+    {"it": "Lei è allergico?", "zh": "您过敏吗？"},
+    {"it": "No. Lo prendo sempre per il raffreddore.", "zh": "不过敏，我感冒一直吃这个。"},
+    {"it": "Sono compresse effervescenti a base di paracetamolo.", "zh": "这是含对乙酰氨基酚的泡腾片。"},
+    {"it": "una scatola da otto o da dieci compresse", "zh": "八片装或十片装"},
+    {"it": "Ritorno in Inghilterra tra due giorni.", "zh": "我两天后回英国。"},
+    {"it": "Contatti il suo dottore se i sintomi persistono.", "zh": "如果症状持续，请联系医生。"}
+  ],
+  "dialogue": [
+    {"who": "药剂师", "it": "Buongiorno. Mi dica.", "zh": "您好，请讲。"},
+    {"who": "约翰", "it": "Buongiorno. Ho un problema. Ho un forte raffreddore. Cosa mi consiglia?", "zh": "您好，我有点不舒服，感冒很严重。您有什么建议？"},
+    {"who": "药剂师", "it": "Lei è allergico al paracetamolo?", "zh": "您对对乙酰氨基酚过敏吗？"},
+    {"who": "约翰", "it": "No. Lo prendo sempre per il raffreddore.", "zh": "不过敏，我感冒一直吃这个。"},
+    {"who": "药剂师", "it": "Ecco, queste. Sono compresse effervescenti a base di paracetamolo.", "zh": "给您这个，是含对乙酰氨基酚的泡腾片。"},
+    {"who": "约翰", "it": "Va bene. Quante compresse al giorno?", "zh": "好的，一天吃几片？"},
+    {"who": "药剂师", "it": "Prenda una compressa due volte al giorno. Vuole una scatola da otto o da dieci compresse?", "zh": "一天两次，每次一片。您要八片装还是十片装？"},
+    {"who": "约翰", "it": "Una scatola da otto. Ritorno in Inghilterra tra due giorni.", "zh": "八片装吧，我两天后回英国。"},
+    {"who": "药剂师", "it": "Sono €6,50. Contatti il suo dottore se i sintomi persistono.", "zh": "六欧五十分。如果症状持续，请联系医生。"},
+    {"who": "约翰", "it": "Ecco a lei.", "zh": "给您钱。"},
+    {"who": "药剂师", "it": "Ecco il resto e lo scontrino. Grazie!", "zh": "这是找零和小票，谢谢！"}
+  ],
+  "extraTitle": "常见疾病与药品",
+  "extra": [
+    {"it": "Ho il mal di testa.", "zh": "我头痛。"},
+    {"it": "Ho la febbre.", "zh": "我发烧了。"},
+    {"it": "Ho un’insolazione.", "zh": "我中暑了。"},
+    {"it": "Ho una reazione allergica a ...", "zh": "我对……有过敏反应。"},
+    {"it": "Ho una puntura di zanzara.", "zh": "我被蚊子咬了。"},
+    {"it": "una pomata", "zh": "药膏"},
+    {"it": "un’aspirina", "zh": "阿司匹林"},
+    {"it": "uno sciroppo per la tosse", "zh": "止咳糖浆"},
+    {"it": "antibiotici", "zh": "抗生素"}
+  ],
+  "plusTitle": "拓展：描述症状",
+  "plus": [
+    {"it": "Mi sento stanco.", "zh": "我觉得很累。"},
+    {"it": "Sento freddo.", "zh": "我觉得冷。"},
+    {"it": "Ho i brividi.", "zh": "我在发抖。"},
+    {"it": "Sono sudato.", "zh": "我在出汗。"},
+    {"it": "Ho il prurito.", "zh": "我觉得痒。"},
+    {"it": "Ho il mal di gola.", "zh": "我嗓子疼。"},
+    {"it": "La puntura si è gonfiata.", "zh": "叮咬处肿起来了。"},
+    {"it": "Ho un arrossamento.", "zh": "皮肤发红了。"}
+  ],
+  "tasks": [
+    "听对话，回答：约翰需要吃几片、一天几次？",
+    "再听一遍：他为什么去药店？买了多少片装？",
+    "词义理解：No. Lo prendo sempre per il raffreddore、tra due giorni、Contatti il suo dottore se i sintomi persistono 分别是什么意思？",
+    "情景跟读：药剂师问好时，说明你发烧了；再用 Vorrei 要一瓶止咳糖浆。"
+  ],
+  "tips": [
+    "tra 和 fra 可互换，表示「多久以后」，如 tra due giorni（两天后）。",
+    "意大利药店（farmacia）标志是绿色十字；药剂师常用 Prenda…（请服用……）给出服药建议。"
+  ]
+}

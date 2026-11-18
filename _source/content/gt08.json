@@ -1,0 +1,67 @@
+{
+  "book": "get",
+  "day": 8,
+  "slug": "gt08",
+  "title": "参观博物馆",
+  "orig": "Going to the local museum",
+  "lead": "问开放时间、门票与导览，听懂「全天开放」「周一闭馆」「免费」这些高频说法，还能在游客中心问地图。",
+  "goals": ["询问开放时间与票价", "咨询导览服务", "询问旅游景点的票务信息", "在游客中心获取资料"],
+  "core": [
+    {"it": "Ha un depliant?", "zh": "有宣传册吗？"},
+    {"it": "Penso di sì.", "zh": "应该有。"},
+    {"it": "Non ci sono.", "zh": "没有了。"},
+    {"it": "Quale è l’orario di apertura?", "zh": "开放时间是什么？"},
+    {"it": "Il museo fa orario continuato.", "zh": "博物馆全天连续开放。"},
+    {"it": "Tutti i giorni tranne il lunedì.", "zh": "除周一外每天开放。"},
+    {"it": "Bene. E quanto costa l’ingresso?", "zh": "好的，门票多少钱？"},
+    {"it": "Il museo è gratuito.", "zh": "博物馆免费。"},
+    {"it": "Ci sono visite guidate?", "zh": "有导览吗？"},
+    {"it": "La visita è compresa nel biglietto.", "zh": "导览包含在门票内。"}
+  ],
+  "dialogue": [
+    {"who": "约翰", "it": "Buongiorno. Vorrei delle informazioni sul Museo Archeologico delle Marche. Ha un depliant?", "zh": "您好，我想了解一下马尔凯考古博物馆。有宣传册吗？"},
+    {"who": "工作人员", "it": "Penso di sì, controllo subito … Mi dispiace, non ci sono. Che informazioni vuole?", "zh": "我看看……抱歉，没有了。您想了解什么？"},
+    {"who": "约翰", "it": "Quale è l’orario di apertura?", "zh": "开放时间是什么？"},
+    {"who": "工作人员", "it": "Il museo fa orario continuato, dalle 8,30 fino alle 19,30.", "zh": "博物馆全天连续开放，从八点半到十九点半。"},
+    {"who": "约翰", "it": "Tutti i giorni?", "zh": "每天都开吗？"},
+    {"who": "工作人员", "it": "Tutti i giorni tranne il lunedì.", "zh": "除周一外每天都开。"},
+    {"who": "约翰", "it": "Bene. E quanto costa l’ingresso?", "zh": "好的，门票多少钱？"},
+    {"who": "工作人员", "it": "Il biglietto intero costa €4, quello ridotto €2. Il museo è gratuito per tutti i giovani sotto i diciotto anni e gli anziani sopra i sessantacinque anni.", "zh": "全票四欧元，优惠票两欧元。十八岁以下青少年和六十五岁以上老人免费。"},
+    {"who": "约翰", "it": "Benissimo, grazie. Ci sono visite guidate?", "zh": "太好了，谢谢。有导览吗？"},
+    {"who": "工作人员", "it": "Sì, deve prenotare.", "zh": "有，但需要预约。"},
+    {"who": "约翰", "it": "Quanto costa la visita guidata?", "zh": "导览多少钱？"},
+    {"who": "工作人员", "it": "La visita è compresa nel biglietto.", "zh": "导览包含在门票里。"},
+    {"who": "约翰", "it": "Grazie delle informazioni, arrivederci.", "zh": "谢谢您的介绍，再见。"}
+  ],
+  "extraTitle": "开放时间与优惠",
+  "extra": [
+    {"it": "A che ora apre?", "zh": "几点开门？"},
+    {"it": "A che ora chiude?", "zh": "几点关门？"},
+    {"it": "Chiude a pranzo?", "zh": "午休关门吗？"},
+    {"it": "A che ora è l’ultima visita guidata?", "zh": "最后一班导览是几点？"},
+    {"it": "Ci sono riduzioni per le famiglie?", "zh": "家庭有优惠吗？"},
+    {"it": "Ci sono sconti per i gruppi?", "zh": "团体有折扣吗？"},
+    {"it": "Non ci sono biglietti ridotti?", "zh": "没有优惠票吗？"}
+  ],
+  "plusTitle": "拓展：游客中心常用语",
+  "plus": [
+    {"it": "Avete una piantina della città?", "zh": "有城市地图吗？"},
+    {"it": "Avete dei volantini?", "zh": "有宣传单吗？"},
+    {"it": "È gratuito?", "zh": "免费吗？"},
+    {"it": "Vorrei delle informazioni sulla mostra.", "zh": "我想了解这个展览。"},
+    {"it": "È adatto ai bambini?", "zh": "适合儿童吗？"},
+    {"it": "Sono interessato a ...", "zh": "我对……感兴趣。"},
+    {"it": "È interessante!", "zh": "很有意思！"},
+    {"it": "Posso comprare qui i biglietti?", "zh": "可以在这里买票吗？"}
+  ],
+  "tasks": [
+    "听对话，回答：有导览服务吗？",
+    "再听一遍：博物馆开放时间？门票多少钱？",
+    "词义理解：Bene. E quanto costa l’ingresso?、Tutti i giorni、gratuito 分别是什么意思？",
+    "情景跟读：工作人员问你想了解什么时，先问「几点开门？」，再问「团体有折扣吗？」，最后自己追加一个问题。"
+  ],
+  "tips": [
+    "意大利不少商店和博物馆午间休息，但 fa orario continuato 表示「连续开放、午间不休息」，从早开到晚。",
+    "表达时间区间用 dalle … fino alle …，如 dalle 8,30 fino alle 19,30（八点半到十九点半）。"
+  ]
+}
