@@ -50,6 +50,7 @@ for dp, ds, fs in os.walk(SITE):
         rel = os.path.relpath(full, SITE).replace('\\', '/')
         files[rel] = open(full, 'rb').read()
 for rel in ['build.py', 'push_github.py',
+            '_source/audio_manifest.json',
             '_source/content/kt00.json'] + [
             '_source/content/%s%02d.json' % (p, i)
             for p in ('gt', 'kt') for i in range(1, 11)]:
@@ -82,7 +83,7 @@ new_tree = api('%s/git/trees' % base_url, method='POST',
 
 # 5. 提交并更新 ref
 commit = api('%s/git/commits' % base_url, method='POST', data={
-    'message': 'Build Talking Italian learning site: hub + 20 lessons + placeholders',
+    'message': 'Add original Italian audio (220 clips) to Get Talking 10 lessons',
     'tree': new_tree['sha'],
     'parents': [parent_sha],
 })

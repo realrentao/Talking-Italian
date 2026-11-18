@@ -150,6 +150,7 @@ img{max-width:100%}
 .vocab .it,.dlg-it{color:var(--blue-d);font-weight:600;cursor:pointer;position:relative}
 .vocab .it:hover,.dlg-it:hover{color:var(--red);text-decoration:underline dotted}
 .vocab .it::after,.dlg-it::after{content:" 🔊";font-size:10px;opacity:.4;font-weight:400}
+.vocab .it[data-audio]::after,.dlg-it[data-audio]::after{content:" 🔊 原声";opacity:.75;color:#9A6B20}
 .speaking{background:#FFF3CD;border-radius:4px}
 .vocab .zh{color:#4E5A61}
 .vocab th:first-child,.vocab td:first-child{width:52%}

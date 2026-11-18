@@ -13,6 +13,27 @@ def load(name):
     with open(os.path.join(SRC, name + '.json'), encoding='utf-8') as f:
         return json.load(f)
 
+# 教材原声切片映射（可选；未生成时自动回退浏览器合成音）
+AUDIO = {}
+_audio_path = os.path.join(ROOT, '_source', 'audio_map.json')
+if os.path.exists(_audio_path):
+    with open(_audio_path, encoding='utf-8') as f:
+        _audio_raw = json.load(f)
+    for _day, _info in _audio_raw.items():
+        for _item in _info.get('items', []):
+            AUDIO[_item['key']] = _item
+
+def audio_attr(day, group, idx):
+    if day is None:
+        return ''
+    key = 'gt%02d.%s.%d' % (day, group, idx)
+    if key not in AUDIO:
+        return ''
+    rel = 'audio/get/gt%02d/%s_%d.mp3' % (day, group, idx)
+    if not os.path.exists(os.path.join(SITE, rel)):
+        return ''
+    return ' data-audio="../../%s"' % rel
+
 def shell(title, depth, body, breadcrumb='', active=''):
     p = '../' * depth
     crumb = '<div class="wrap narrow"><div class="crumbs">%s</div></div>' % breadcrumb if breadcrumb else ''
@@ -177,19 +198,20 @@ def build_volume(key):
     write('talking-ten-days/%s/index.html' % slug, shell(zh, 2, body, vol_crumb(zh), active='book'))
 
 # ---------- 课程页 ----------
-def phrase_table(items):
-    rows = ''.join('<tr><td class="it" onclick="speakEl(this)">%s</td><td class="zh">%s</td></tr>'
-                   % (esc(x['it']), esc(x['zh'])) for x in items)
+def phrase_table(items, day=None, group='core'):
+    rows = ''.join('<tr><td class="it" onclick="speakEl(this)"%s>%s</td><td class="zh">%s</td></tr>'
+                   % (audio_attr(day, group, i), esc(x['it']), esc(x['zh']))
+                   for i, x in enumerate(items))
     return '<table class="vocab"><thead><tr><th>意大利语（点击发音）</th><th>中文</th></tr></thead><tbody>%s</tbody></table>' % rows
 
-def dialogue_block(lines):
+def dialogue_block(lines, day=None):
     out = []
-    for x in lines:
+    for i, x in enumerate(lines):
         out.append('''<div class="dlg-line">
   <div class="dlg-who">%s</div>
-  <div class="dlg-it" onclick="speakEl(this)">%s</div>
+  <div class="dlg-it" onclick="speakEl(this)"%s>%s</div>
   <div class="dlg-zh">%s</div>
-</div>''' % (esc(x['who']), esc(x['it']), esc(x['zh'])))
+</div>''' % (esc(x['who']), audio_attr(day, 'dialogue', i), esc(x['it']), esc(x['zh'])))
     return '<div class="dialogue">%s</div>' % ''.join(out)
 
 def build_lesson(key, d):
@@ -205,21 +227,30 @@ def build_lesson(key, d):
     nav += '<a class="nav-btn" href="index.html">返回分册</a>'
     nav += '<a class="nav-btn %s" href="%s">下一天 →</a>' % ('' if nxt else 'disabled', nxt or '#')
     nav += '</div><div class="nav-buttons" style="padding-top:0"><a class="nav-btn primary" href="../../index.html">返回总导航 →</a></div>'
+    audio_day = n if key == 'get' else None
+    plus_html = ''
+    if d.get('plus'):
+        plus_html = ('<section class="panel"><h2><span class="ico">➕</span>%s</h2>%s</section>'
+                     % (esc(d.get('plusTitle', '拓展表达')),
+                        phrase_table(d['plus'], audio_day, 'plus')))
     body = '''<header class="lesson-hero"><div class="lesson-hero-inner">
   <span class="day-chip">DAY %02d · 第 %d 天</span>
   <h1>%s</h1><p class="orig">%s</p><p class="lead">%s</p>
 </div></header>
 <div class="wrap narrow">
   <section class="panel"><h2><span class="ico">🎯</span>今天要学会</h2><p class="hint">学完这一课，你应该能够：</p><ul class="goals">%s</ul></section>
-  <section class="panel"><h2><span class="ico">💬</span>核心表达</h2><p class="hint">点击意大利语即可听发音；中文为润色后的释义。</p>%s</section>
+  <section class="panel"><h2><span class="ico">💬</span>核心表达</h2><p class="hint">点击意大利语即可听发音；优先播放教材原声，其余为浏览器合成音。</p>%s</section>
   <section class="panel"><h2><span class="ico">🗣️</span>情景对话</h2><p class="hint">先听懂，再跟读；说话人按角色标注。</p>%s</section>
   <section class="panel"><h2><span class="ico">📖</span>%s</h2>%s</section>
+  %s
   <section class="panel"><h2><span class="ico">🧩</span>%s</h2><p class="hint">教材原有听力与跟读任务，已整理为中文。</p><ol class="task-list">%s</ol></section>
   <section class="panel"><h2><span class="ico">💡</span>语言提示</h2>%s</section>
   %s
 </div>''' % (n, n, esc(d['title']), esc(d['orig']), esc(d['lead']), goals,
-             phrase_table(d['core']), dialogue_block(d['dialogue']),
-             esc(d['extraTitle']), phrase_table(d['extra']),
+             phrase_table(d['core'], audio_day, 'core'),
+             dialogue_block(d['dialogue'], audio_day),
+             esc(d['extraTitle']), phrase_table(d['extra'], audio_day, 'extra'),
+             plus_html,
              '练习与跟读', tasks, tips, nav)
     crumb = lesson_crumb(volzh, d['title'], 'index.html')
     write('talking-ten-days/%s/day-%02d.html' % (slug, n), shell('第%d天 · %s' % (n, d['title']), 2, body, crumb, active='book'))
