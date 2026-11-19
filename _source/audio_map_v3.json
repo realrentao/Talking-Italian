@@ -308,6 +308,46 @@
     "end": 971.84,
     "score": 1.0,
     "matched": "directed-transcribe-waveform"
+   },
+   {
+    "key": "gt01.plus.3",
+    "group": "plus",
+    "index": 3,
+    "it": "È abbastanza lontano.",
+    "start": 1092.42,
+    "end": 1094.56,
+    "score": 1.0,
+    "matched": "directed-transcribe-waveform"
+   },
+   {
+    "key": "gt01.plus.4",
+    "group": "plus",
+    "index": 4,
+    "it": "Quanto ci vuole?",
+    "start": 1098.28,
+    "end": 1099.54,
+    "score": 1.0,
+    "matched": "directed-transcribe-waveform"
+   },
+   {
+    "key": "gt01.plus.6",
+    "group": "plus",
+    "index": 6,
+    "it": "Dieci minuti in macchina.",
+    "start": 1109.48,
+    "end": 1111.88,
+    "score": 1.0,
+    "matched": "directed-transcribe-waveform"
+   },
+   {
+    "key": "gt01.plus.7",
+    "group": "plus",
+    "index": 7,
+    "it": "È troppo lontano a piedi.",
+    "start": 1116.18,
+    "end": 1118.6,
+    "score": 1.0,
+    "matched": "directed-transcribe-waveform"
    }
   ]
  },
