@@ -5,6 +5,7 @@ import json, os, html, shutil
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, '_source', 'content')
 SITE = os.path.join(ROOT, 'site')
+WEB_VER = os.environ.get('AUDIO_VER', 'v3')  # app.js 破缓存版本，随音频版本一起升
 
 def esc(s):
     return html.escape(str(s), quote=False)
@@ -61,10 +62,10 @@ def shell(title, depth, body, breadcrumb='', active=''):
 %s
 %s
 <footer class="site-footer">为意大利语学习者整理 · 意大利语原文点击即可发音 · <a href="%sindex.html">返回总导航</a></footer>
-<script src="%sassets/app.js"></script>
+<script src="%sassets/app.js?%s"></script>
 </body>
 </html>
-''' % (esc(title), p, nav, crumb, body, p, p)
+''' % (esc(title), p, nav, crumb, body, p, p, WEB_VER)
 
 def write(path, content):
     full = os.path.join(SITE, path)
@@ -249,7 +250,7 @@ def build_lesson(key, d):
 </div></header>
 <div class="wrap narrow">
   <section class="panel"><h2><span class="ico">🎯</span>今天要学会</h2><p class="hint">学完这一课，你应该能够：</p><ul class="goals">%s</ul></section>
-  <section class="panel"><h2><span class="ico">💬</span>核心表达</h2><p class="hint">点击意大利语即可听发音；优先播放教材原声，其余为浏览器合成音。</p>%s</section>
+  <section class="panel"><h2><span class="ico">💬</span>核心表达</h2><p class="hint">点击意大利语即可听发音。</p>%s</section>
   <section class="panel"><h2><span class="ico">🗣️</span>情景对话</h2><p class="hint">先听懂，再跟读；说话人按角色标注。</p>%s</section>
   <section class="panel"><h2><span class="ico">📖</span>%s</h2>%s</section>
   %s
