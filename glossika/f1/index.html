@@ -44,22 +44,23 @@ a{color:inherit;text-decoration:none}
   background:var(--surface);border:1px solid var(--line);border-radius:14px;
   margin:12px 0;box-shadow:var(--shadow)}
 .num{font-size:20px;font-weight:800;color:var(--gold);text-align:center;padding-top:6px}
-.cell{display:flex;flex-direction:column;gap:9px}
-.line{display:flex;align-items:flex-start;gap:10px}
-.play{flex:none;width:34px;height:34px;border-radius:9px;border:1px solid var(--line);
-  background:#fff;cursor:pointer;font-size:14px;display:grid;place-items:center;transition:.15s}
-.play:hover{transform:scale(1.06)}
-.play.en{color:var(--en);border-color:#b9d0de}
-.play.it{color:var(--it);border-color:#e5b8b3}
-.play.zh{color:var(--zh);border-color:#b6d9c6}
-.play.playing{color:#fff;background:currentColor}
-.play.en.playing{background:var(--en)}.play.it.playing{background:var(--it)}.play.zh.playing{background:var(--zh)}
-.txt{flex:1}
-.txt.en{color:var(--en);font-size:16px;font-weight:600}
-.txt.it{color:var(--it);font-size:16px;font-weight:600}
-.txt.zh{color:var(--ink);font-size:14px}
+.cell{display:flex;flex-direction:column;gap:6px}
+.line{cursor:pointer;padding:6px 10px;border-radius:9px;border-left:3px solid transparent;
+  transition:background .15s,border-color .15s;user-select:none}
+.line:hover{background:var(--cream)}
+.line.zh{border-left-color:var(--zh)}
+.line.en{border-left-color:var(--en)}
+.line.it{border-left-color:var(--it)}
+.line.playing{background:#f3ead2}
+.line.zh.playing{border-left-color:var(--zh);border-left-width:6px}
+.line.en.playing{border-left-color:var(--en);border-left-width:6px}
+.line.it.playing{border-left-color:var(--it);border-left-width:6px}
+.txt.zh{color:var(--ink);font-size:17px;font-weight:600}
+.txt.en{color:var(--en);font-size:15px}
+.txt.it{color:var(--it);font-size:15px;font-weight:600}
 .tag{font-size:10px;font-weight:700;letter-spacing:1px;padding:2px 6px;border-radius:5px;
   background:var(--cream);color:var(--muted);margin-right:6px;vertical-align:2px}
+.line.playing .tag{background:#fff;color:var(--gold)}
 .foot{text-align:center;color:var(--muted);font-size:12px;padding:0 20px 40px}
 </style>
 </head>
@@ -67,7 +68,7 @@ a{color:inherit;text-decoration:none}
 <div class="hero"><div class="hero-inner">
   <span class="eyebrow">GLOSSIKA · ITALIAN FLUENCY 1 · GMS-B-0001</span>
   <h1>意大利语流利度 1 · 第 1–50 句</h1>
-  <p>逐句原声对照。英语与意大利语发音均从你提供的 <b>ENIT-F1-GMS-B-0001.mp3</b> 精确截取；中文配音为 edge-tts 年轻男声（云希）。点每行的播放按钮听对应发音。</p>
+  <p>逐句原声对照。英语与意大利语发音均从你提供的 <b>ENIT-F1-GMS-B-0001.mp3</b> 精确截取；中文配音为 edge-tts 年轻男声（云希）。点击任意句子即可听对应发音。</p>
   <div class="hero-stats">
     <div class="hero-stat"><b>50</b><span>句</span></div>
     <div class="hero-stat"><b>150</b><span>音频片段</span></div>
@@ -82,11 +83,11 @@ a{color:inherit;text-decoration:none}
 </div></div>
 
 <div class="wrap">
-  <p class="hint">编号、顺序与文件名一一对应：<code>audio/en/NN.mp3</code>、<code>audio/it/NN.mp3</code>、<code>audio/zh/NN.mp3</code>（NN = 01–50）。</p>
+  <p class="hint">编号、顺序与文件名一一对应：<code>audio/zh/NN.mp3</code>、<code>audio/en/NN.mp3</code>、<code>audio/it/NN.mp3</code>（NN = 01–50）。点击句子播放。</p>
   <div class="legend">
-    <span><i style="color:var(--en)">▶ EN</i> 英语原声</span>
-    <span><i style="color:var(--it)">▶ IT</i> 意大利语原声</span>
-    <span><i style="color:var(--zh)">▶ 中</i> 中文配音</span>
+    <span><i style="color:var(--zh)">■ 中</i> 中文配音</span>
+    <span><i style="color:var(--en)">■ EN</i> 英语原声</span>
+    <span><i style="color:var(--it)">■ IT</i> 意大利语原声</span>
   </div>
   <div class="list" id="list"></div>
 </div>
@@ -98,21 +99,25 @@ a{color:inherit;text-decoration:none}
   var S = (window.F1_DATA && window.F1_DATA.sentences) || [];
   var list = document.getElementById('list');
   var q = document.getElementById('q');
-  var audio = null, curBtn = null;
+  var audio = null, curLine = null;
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
     return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c];});}
-  function play(btn, src){
-    if(audio){audio.pause();}
-    if(curBtn){curBtn.classList.remove('playing');}
-    if(audio && audio.src.indexOf(src)>=0 && !audio.paused){return;}
+  function stopCur(){
+    if(audio){audio.pause();audio=null;}
+    if(curLine){curLine.classList.remove('playing');curLine=null;}
+  }
+  function play(line, src){
+    if(curLine===line){stopCur();return;}
+    stopCur();
     audio = new Audio(src);
-    btn.classList.add('playing'); curBtn = btn;
-    audio.onended = function(){btn.classList.remove('playing'); if(curBtn===btn)curBtn=null;};
-    audio.onerror = function(){btn.classList.remove('playing'); if(curBtn===btn)curBtn=null;};
+    curLine = line; line.classList.add('playing');
+    audio.onended = stopCur;
+    audio.onerror = stopCur;
     audio.play();
   }
   function render(filter){
     filter = (filter||'').toLowerCase().trim();
+    stopCur();
     list.innerHTML='';
     S.forEach(function(s){
       var hay = (s.en+' '+s.it+' '+s.zh).toLowerCase();
@@ -121,17 +126,14 @@ a{color:inherit;text-decoration:none}
       d.innerHTML =
         '<div class="num">'+s.n+'</div>'+
         '<div class="cell">'+
-          '<div class="line"><button class="play en" data-src="'+s.enAudio+'">▶</button>'+
-            '<div class="txt en"><span class="tag">EN</span>'+esc(s.en)+'</div></div>'+
-          '<div class="line"><button class="play it" data-src="'+s.itAudio+'">▶</button>'+
-            '<div class="txt it"><span class="tag">IT</span>'+esc(s.it)+'</div></div>'+
-          '<div class="line"><button class="play zh" data-src="'+s.zhAudio+'">▶</button>'+
-            '<div class="txt zh"><span class="tag">中</span>'+esc(s.zh)+'</div></div>'+
+          '<div class="line zh" data-src="'+s.zhAudio+'"><div class="txt zh"><span class="tag">中</span>'+esc(s.zh)+'</div></div>'+
+          '<div class="line en" data-src="'+s.enAudio+'"><div class="txt en"><span class="tag">EN</span>'+esc(s.en)+'</div></div>'+
+          '<div class="line it" data-src="'+s.itAudio+'"><div class="txt it"><span class="tag">IT</span>'+esc(s.it)+'</div></div>'+
         '</div>';
       list.appendChild(d);
     });
-    list.querySelectorAll('.play').forEach(function(b){
-      b.addEventListener('click',function(){play(b, b.getAttribute('data-src'));});
+    list.querySelectorAll('.line').forEach(function(el){
+      el.addEventListener('click',function(){play(el, el.getAttribute('data-src'));});
     });
   }
   q.addEventListener('input',function(){render(q.value);});
