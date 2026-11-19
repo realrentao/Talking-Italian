@@ -6,7 +6,6 @@
   var DATA = {};
   var currentAudio = null;
 
-  function h(html) { return html; }
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
       return ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'})[c];
@@ -18,13 +17,12 @@
       '<a href="#/book/1"' + (active === 'b1' ? ' class="active"' : '') + '>Fluency 1</a>' +
       '<a href="#/book/2"' + (active === 'b2' ? ' class="active"' : '') + '>Fluency 2</a>' +
       '<a href="#/book/3"' + (active === 'b3' ? ' class="active"' : '') + '>Fluency 3</a>' +
-      '<a href="f1/index.html" style="color:#C0392B;font-weight:700">🎧 逐句发音版</a>' +
       '<a href="../index.html">← 书架</a>';
   }
   function loadData(book, cb) {
     if (DATA[book]) return cb(DATA[book]);
     var s = document.createElement('script');
-    s.src = 'data/book' + book + '.js';
+    s.src = 'data/book' + book + '.js?v20';
     s.onload = function () { DATA[book] = window['GLOSSIKA_B' + book]; cb(DATA[book]); };
     s.onerror = function () { VIEWS.innerHTML = '<div class="wrap"><p>数据加载失败</p></div>'; };
     document.head.appendChild(s);
@@ -36,11 +34,11 @@
       '<header class="hero"><div class="hero-inner">' +
       '<span class="eyebrow">GLOSSIKA · ITALIAN FLUENCY</span>' +
       '<h1>Glossika 意大利语流利度</h1>' +
-      '<p>三册共 3000 个高频句型，中 / 英 / 意三语逐句对照，附意大利语 IPA 发音。发音仅来自已上传的教材原声 mp3，适合跟读与句型积累。</p>' +
+      '<p>三册共 3000 个高频句型，中 / 英 / 意三语逐句对照，附意大利语 IPA 发音。中文置顶，点击任意一行即可听对应原声发音；发音仅来自已上传的教材 mp3。</p>' +
       '<div class="hero-stats"><div class="hero-stat"><b>3</b><span>册</span></div>' +
       '<div class="hero-stat"><b>30</b><span>课</span></div>' +
       '<div class="hero-stat"><b>3000</b><span>句型</span></div></div>' +
-      '<p style="margin-top:16px"><a href="f1/index.html" style="display:inline-block;background:#fff;color:#C0392B;font-weight:700;padding:10px 20px;border-radius:10px">🎧 进入中英意逐句原声发音版（已上线 50 句）→</a></p>' +
+      '<p style="margin-top:16px"><a href="#/lesson/G1-L01" style="display:inline-block;background:#fff;color:#C0392B;font-weight:700;padding:10px 20px;border-radius:10px">🎧 进入逐句原声发音（已上线 50 句）→</a></p>' +
       '</div></header>' +
       '<div class="wrap"><section class="section"><div class="section-head"><h2>选择分册</h2>' +
       '<span class="sub">每册 1000 句 · 分 10 课 · 每课 100 句</span></div><div class="card-grid">' +
@@ -50,7 +48,7 @@
           '<div class="orig">Glossika Italian Fluency ' + b + '</div>' +
           '<p>1000 个递进句型，覆盖日常、旅行、情感与抽象表达，按科学间隔重复编排。</p>' +
           '<span class="cta">进入分册 →</span></a>';
-      }).join('') + '</div><div class="notice">中文为依据原书英文释义翻译的参考译文，意大利语原文与 IPA 均保留自原书。发音只播放已上传的教材原声 mp3，不使用浏览器合成音；未上传原声的句子点击后静默。</div></section></div>' +
+      }).join('') + '</div><div class="notice">中文为依据原书英文释义翻译的参考译文，意大利语原文与 IPA 均保留自原书。中 / 英 / 意三行均可点击听发音，发音只播放已上传的教材原声 mp3，不使用浏览器合成音；未上传原声的句子点击后静默。</div></section></div>' +
       footer();
   }
 
@@ -80,11 +78,16 @@
     loadData(b, function (d) {
       var L = d.lessons[li - 1];
       if (!L) return home();
+      function line(cls, txt, audio) {
+        return '<div class="line ' + cls + '"' +
+          (audio ? ' data-audio="' + esc(audio) + '" onclick="speakEl(this)"' : '') +
+          '>' + esc(txt) + '</div>';
+      }
       var rows = L.items.map(function (it) {
         return '<div class="sent" data-n="' + it.n + '"><div class="n">' + it.n + '</div><div class="body">' +
-          '<div class="zh">' + esc(it.zh || '') + '</div>' +
-          '<div class="en">' + esc(it.en) + '</div>' +
-          '<div class="it" onclick="speakEl(this)"' + (it.itAudio ? ' data-audio="' + esc(it.itAudio) + '"' : '') + '>' + esc(it.it) + ' <span>🔊</span></div>' +
+          line('zh', it.zh || '', it.zhAudio) +
+          line('en', it.en, it.enAudio) +
+          line('it', it.it, it.itAudio) +
           '<div class="ipa">' + esc(it.ipa) + '</div></div></div>';
       }).join('');
       VIEWS.innerHTML =
@@ -119,7 +122,7 @@
         document.querySelectorAll('#list .sent').forEach(function (el) {
           el.classList.toggle('hide-en', m !== 'all');
           el.classList.toggle('hide-zh', m === 'it');
-          el.classList.toggle('hide-ip', m === 'it');
+          /* IPA 常显，任何模式都不隐藏 */
         });
       });
     });
@@ -130,9 +133,11 @@
     var src = el.getAttribute('data-audio');
     if (!src) return;
     if (currentAudio) { try { currentAudio.pause(); } catch (e) {} }
+    document.querySelectorAll('#list .line.playing').forEach(function (x) { x.classList.remove('playing'); });
     var row = el.closest ? el.closest('.sent') : null;
     if (row) row.classList.add('speaking');
-    var clear = function () { if (row) row.classList.remove('speaking'); };
+    el.classList.add('playing');
+    var clear = function () { el.classList.remove('playing'); if (row) row.classList.remove('speaking'); };
     try {
       var a = new Audio(src);
       currentAudio = a;
