@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>意大利语流利度 1 · 第 1-50 句 · 逐句原声对照</title>
+<title>意大利语流利度 1 · 第 1-1000 句 · 逐句原声对照</title>
 <style>
 :root{
   --bg:#fbfaf7;--surface:#fff;--ink:#1f2d33;--muted:#6b7a83;--line:#e6ded0;
@@ -41,7 +41,12 @@ a{color:inherit;text-decoration:none}
   font-size:13px;color:var(--muted);cursor:pointer;transition:.15s}
 .modes button:hover{color:var(--it)}
 .modes button.active{background:var(--it);color:#fff;font-weight:700}
-.list{padding:18px 0 60px}
+.books{display:flex;gap:5px;flex-wrap:wrap;padding:14px 0 4px}
+.books button{border:1px solid var(--line);background:var(--surface);color:var(--muted);
+  padding:5px 10px;border-radius:8px;font-size:12px;cursor:pointer;transition:.15s}
+.books button:hover{border-color:var(--it);color:var(--it)}
+.books button.active{background:var(--en);color:#fff;border-color:var(--en);font-weight:700}
+.list{padding:12px 0 60px}
 .row{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:16px;
   background:var(--surface);border:1px solid var(--line);border-radius:14px;
   margin:12px 0;box-shadow:var(--shadow)}
@@ -70,18 +75,18 @@ a{color:inherit;text-decoration:none}
 </head>
 <body>
 <div class="hero"><div class="hero-inner">
-  <span class="eyebrow">GLOSSIKA · ITALIAN FLUENCY 1 · GMS-B-0001</span>
-  <h1>意大利语流利度 1 · 第 1–50 句</h1>
-  <p>逐句原声对照。英语与意大利语发音均从你提供的 <b>ENIT-F1-GMS-B-0001.mp3</b> 精确截取；中文配音为 edge-tts 年轻男声（云希）。点击任意句子即可听对应发音。</p>
+  <span class="eyebrow">GLOSSIKA · ITALIAN FLUENCY 1 · 全 20 册</span>
+  <h1>意大利语流利度 1 · 第 1–1000 句</h1>
+  <p>逐句原声对照。英语与意大利语发音均从你提供的 GMS 原声 mp3 精确截取；中文配音为 edge-tts 年轻男声（云希）。点击任意句子即可听对应发音。</p>
   <div class="hero-stats">
-    <div class="hero-stat"><b>50</b><span>句</span></div>
-    <div class="hero-stat"><b>150</b><span>音频片段</span></div>
-    <div class="hero-stat"><b>1</b><span>原声来源</span></div>
+    <div class="hero-stat"><b>1000</b><span>句</span></div>
+    <div class="hero-stat"><b>20</b><span>分册</span></div>
+    <div class="hero-stat"><b>3000</b><span>音频片段</span></div>
   </div>
 </div></div>
 
 <div class="bar"><div class="bar-inner">
-  <input id="q" type="text" placeholder="搜索英文 / 意大利语 / 中文…">
+  <input id="q" type="text" placeholder="搜索全部：英文 / 意大利语 / 中文…">
   <div class="modes">
     <button data-m="all" class="active">三语</button>
     <button data-m="zh-it">中意</button>
@@ -92,6 +97,7 @@ a{color:inherit;text-decoration:none}
 </div></div>
 
 <div class="wrap">
+  <div class="books" id="books"></div>
   <div class="list" id="list"></div>
 </div>
 <div class="foot">英语 / 意大利语音频仅来自用户提供的 mp3 · 中文配音 edge-tts zh-CN-YunxiNeural</div>
@@ -100,9 +106,9 @@ a{color:inherit;text-decoration:none}
 <script>
 (function(){
   var S = (window.F1_DATA && window.F1_DATA.sentences) || [];
-  var list = document.getElementById('list');
+  var list = document.getElementById('list'), booksEl = document.getElementById('books');
   var q = document.getElementById('q');
-  var mode = 'all';
+  var mode = 'all', book = 1;   // 当前分册 1-20
   var audio = null, curLine = null;
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
     return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c];});}
@@ -123,25 +129,46 @@ a{color:inherit;text-decoration:none}
     audio.onerror = stopCur;
     audio.play();
   }
-  function render(filter){
-    filter = (filter||'').toLowerCase().trim();
-    stopCur();
-    list.innerHTML='';
-    S.forEach(function(s){
-      var hay = (s.en+' '+s.it+' '+s.zh+' '+(s.ipa||'')).toLowerCase();
-      if(filter && hay.indexOf(filter)<0) return;
-      var d=document.createElement('div'); d.className='row';
-      applyMode(d, mode);
-      d.innerHTML =
-        '<div class="num">'+s.n+'</div>'+
-        '<div class="cell">'+
-          '<div class="line zh" data-src="'+s.zhAudio+'"><div class="txt zh"><span class="tag">中</span>'+esc(s.zh)+'</div></div>'+
-          '<div class="line en" data-src="'+s.enAudio+'"><div class="txt en"><span class="tag">EN</span>'+esc(s.en)+'</div></div>'+
-          '<div class="line it" data-src="'+s.itAudio+'"><div class="txt it"><span class="tag">IT</span>'+esc(s.it)+'</div></div>'+
-          (s.ipa ? '<div class="txt ipa">/'+esc(s.ipa)+'/</div>' : '')+
-        '</div>';
-      list.appendChild(d);
-    });
+  function renderBooks(){
+    booksEl.innerHTML='';
+    for(var b=1;b<=20;b++){
+      var btn=document.createElement('button');
+      btn.textContent=b+' ('+(b*50-49)+'-'+(b*50)+')';
+      btn.className=(b===book?'active':'');
+      (function(bb){btn.addEventListener('click',function(){
+        book=bb; q.value=''; renderBooks(); render(); window.scrollTo({top:0,behavior:'smooth'});
+      });})(b);
+      booksEl.appendChild(btn);
+    }
+  }
+  function rowHTML(s){
+    var d=document.createElement('div'); d.className='row'; applyMode(d,mode);
+    d.innerHTML =
+      '<div class="num">'+s.n+'</div>'+
+      '<div class="cell">'+
+        '<div class="line zh" data-src="'+s.zhAudio+'"><div class="txt zh"><span class="tag">中</span>'+esc(s.zh)+'</div></div>'+
+        '<div class="line en" data-src="'+s.enAudio+'"><div class="txt en"><span class="tag">EN</span>'+esc(s.en)+'</div></div>'+
+        '<div class="line it" data-src="'+s.itAudio+'"><div class="txt it"><span class="tag">IT</span>'+esc(s.it)+'</div></div>'+
+        (s.ipa ? '<div class="txt ipa">/'+esc(s.ipa)+'/</div>' : '')+
+      '</div>';
+    return d;
+  }
+  function render(){
+    stopCur(); list.innerHTML='';
+    var filter=q.value.toLowerCase().trim(), shown=0;
+    if(filter){
+      // 搜索全库
+      S.forEach(function(s){
+        var hay=(s.en+' '+s.it+' '+s.zh+' '+(s.ipa||'')).toLowerCase();
+        if(hay.indexOf(filter)<0) return;
+        list.appendChild(rowHTML(s)); shown++;
+      });
+    } else {
+      // 仅当前分册
+      var lo=book*50-49, hi=book*50;
+      S.forEach(function(s){ if(s.n>=lo&&s.n<=hi){list.appendChild(rowHTML(s));shown++;} });
+    }
+    if(!shown){list.innerHTML='<p style="color:#6b7a83;padding:20px">没有匹配的句子</p>';}
     list.querySelectorAll('.line').forEach(function(el){
       el.addEventListener('click',function(){play(el, el.getAttribute('data-src'));});
     });
@@ -149,13 +176,12 @@ a{color:inherit;text-decoration:none}
   document.querySelectorAll('.modes button').forEach(function(btn){
     btn.addEventListener('click',function(){
       document.querySelectorAll('.modes button').forEach(function(x){x.classList.remove('active');});
-      btn.classList.add('active');
-      mode = btn.getAttribute('data-m');
-      render(q.value);
+      btn.classList.add('active'); mode=btn.getAttribute('data-m');
+      render();
     });
   });
-  q.addEventListener('input',function(){render(q.value);});
-  render('');
+  q.addEventListener('input',render);
+  renderBooks(); render();
 })();
 </script>
 </body>

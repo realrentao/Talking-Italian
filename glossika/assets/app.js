@@ -1,8 +1,10 @@
-/* Glossika 三语学习站：hash 路由 + 数据懒加载 + 显示模式 + 搜索 + 意语 TTS */
+/* Glossika 三语学习站：hash 路由 + 数据懒加载 + 显示模式 + 搜索。
+   发音仅来自上传的教材原声 mp3；未上传原声则静默，不使用浏览器合成音。 */
 (function () {
   var VIEWS = document.getElementById('view');
   var NAV = document.getElementById('nav-links');
   var DATA = {};
+  var currentAudio = null;
 
   function h(html) { return html; }
   function esc(s) {
@@ -33,7 +35,7 @@
       '<header class="hero"><div class="hero-inner">' +
       '<span class="eyebrow">GLOSSIKA · ITALIAN FLUENCY</span>' +
       '<h1>Glossika 意大利语流利度</h1>' +
-      '<p>三册共 3000 个高频句型，中 / 英 / 意三语逐句对照，附意大利语 IPA 发音。点击意语即可听读，适合跟读与句型积累。</p>' +
+      '<p>三册共 3000 个高频句型，中 / 英 / 意三语逐句对照，附意大利语 IPA 发音。发音仅来自已上传的教材原声 mp3，适合跟读与句型积累。</p>' +
       '<div class="hero-stats"><div class="hero-stat"><b>3</b><span>册</span></div>' +
       '<div class="hero-stat"><b>30</b><span>课</span></div>' +
       '<div class="hero-stat"><b>3000</b><span>句型</span></div></div></div></header>' +
@@ -45,7 +47,7 @@
           '<div class="orig">Glossika Italian Fluency ' + b + '</div>' +
           '<p>1000 个递进句型，覆盖日常、旅行、情感与抽象表达，按科学间隔重复编排。</p>' +
           '<span class="cta">进入分册 →</span></a>';
-      }).join('') + '</div><div class="notice">中文为依据原书英文释义翻译的参考译文，意大利语原文与 IPA 均保留自原书。点任意意大利语句子即可用浏览器合成音朗读（it-IT）。</div></section></div>' +
+      }).join('') + '</div><div class="notice">中文为依据原书英文释义翻译的参考译文，意大利语原文与 IPA 均保留自原书。发音只播放已上传的教材原声 mp3，不使用浏览器合成音；未上传原声的句子点击后静默。</div></section></div>' +
       footer();
   }
 
@@ -79,7 +81,7 @@
         return '<div class="sent" data-n="' + it.n + '"><div class="n">' + it.n + '</div><div class="body">' +
           '<div class="zh">' + esc(it.zh || '') + '</div>' +
           '<div class="en">' + esc(it.en) + '</div>' +
-          '<div class="it" onclick="speak(this)">' + esc(it.it) + ' <span>🔊</span></div>' +
+          '<div class="it" onclick="speakEl(this)"' + (it.itAudio ? ' data-audio="' + esc(it.itAudio) + '"' : '') + '>' + esc(it.it) + ' <span>🔊</span></div>' +
           '<div class="ipa">' + esc(it.ipa) + '</div></div></div>';
       }).join('');
       VIEWS.innerHTML =
@@ -120,20 +122,29 @@
     });
   }
 
-  window.speak = function (el) {
-    if (!window.speechSynthesis) return;
-    window.speechSynthesis.cancel();
-    var text = el.childNodes[0].textContent.trim();
-    var u = new SpeechSynthesisUtterance(text);
-    u.lang = 'it-IT'; u.rate = 0.9;
-    var row = el.closest('.sent');
+  // 只播放上传的教材原声 mp3；无 data-audio 则静默，绝不回退浏览器合成音
+  window.speakEl = function (el) {
+    var src = el.getAttribute('data-audio');
+    if (!src) return;
+    if (currentAudio) { try { currentAudio.pause(); } catch (e) {} }
+    var row = el.closest ? el.closest('.sent') : null;
     if (row) row.classList.add('speaking');
-    u.onend = u.onerror = function () { if (row) row.classList.remove('speaking'); };
-    window.speechSynthesis.speak(u);
+    var clear = function () { if (row) row.classList.remove('speaking'); };
+    try {
+      var a = new Audio(src);
+      currentAudio = a;
+      a.preload = 'auto';
+      a.onended = clear;
+      a.onerror = clear;
+      var p = a.play();
+      if (p && p.catch) p.catch(clear);
+    } catch (e) {
+      clear();
+    }
   };
 
   function footer() {
-    return '<footer class="site-footer">Glossika Italian Fluency 1–3 · 中英意三语对照学习站 · 点击意语朗读</footer>';
+    return '<footer class="site-footer">Glossika Italian Fluency 1–3 · 中英意三语对照学习站 · 发音仅来自上传的原声 mp3</footer>';
   }
 
   function route() {
