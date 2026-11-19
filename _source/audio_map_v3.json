@@ -73,16 +73,104 @@
     "matched": "grazie arrivederci"
    },
    {
+    "key": "gt01.dialogue.0",
+    "group": "dialogue",
+    "index": 0,
+    "it": "Buongiorno.",
+    "start": 547.34,
+    "end": 548.48,
+    "score": 1.0,
+    "matched": "directed-transcribe"
+   },
+   {
     "key": "gt01.dialogue.1",
     "group": "dialogue",
     "index": 1,
     "it": "Buongiorno. Devo andare all’albergo Regina Margherita.",
-    "start": 898.86,
-    "end": 902.87,
-    "score": 0.577,
-    "matched": "you go eko lalbergoregina margerita",
-    "orig_start": 899.1,
-    "orig_end": 902.87
+    "start": 549.34,
+    "end": 554.16,
+    "score": 1.0,
+    "matched": "directed-transcribe"
+   },
+   {
+    "key": "gt01.dialogue.2",
+    "group": "dialogue",
+    "index": 2,
+    "it": "In quale via?",
+    "start": 555.32,
+    "end": 556.48,
+    "score": 1.0,
+    "matched": "directed-transcribe"
+   },
+   {
+    "key": "gt01.dialogue.3",
+    "group": "dialogue",
+    "index": 3,
+    "it": "In via Pace.",
+    "start": 557.18,
+    "end": 557.94,
+    "score": 1.0,
+    "matched": "directed-transcribe"
+   },
+   {
+    "key": "gt01.dialogue.4",
+    "group": "dialogue",
+    "index": 4,
+    "it": "A quale numero è l’albergo?",
+    "start": 558.98,
+    "end": 561.6,
+    "score": 1.0,
+    "matched": "directed-transcribe"
+   },
+   {
+    "key": "gt01.dialogue.5",
+    "group": "dialogue",
+    "index": 5,
+    "it": "Al numero otto, credo.",
+    "start": 562.28,
+    "end": 564.64,
+    "score": 1.0,
+    "matched": "directed-transcribe"
+   },
+   {
+    "key": "gt01.dialogue.6",
+    "group": "dialogue",
+    "index": 6,
+    "it": "Va bene, al numero otto di via Pace.",
+    "start": 564.88,
+    "end": 568.42,
+    "score": 1.0,
+    "matched": "directed-transcribe"
+   },
+   {
+    "key": "gt01.dialogue.7",
+    "group": "dialogue",
+    "index": 7,
+    "it": "Ecco l’albergo Regina Margherita. Sono €10.",
+    "start": 570.44,
+    "end": 574.98,
+    "score": 1.0,
+    "matched": "directed-transcribe"
+   },
+   {
+    "key": "gt01.dialogue.8",
+    "group": "dialogue",
+    "index": 8,
+    "it": "Bene, grazie. Ecco a lei.",
+    "start": 576.26,
+    "end": 579.2,
+    "score": 1.0,
+    "matched": "directed-transcribe"
+   },
+   {
+    "key": "gt01.dialogue.9",
+    "group": "dialogue",
+    "index": 9,
+    "it": "Grazie, arrivederci.",
+    "start": 579.62,
+    "end": 581.94,
+    "score": 1.0,
+    "matched": "directed-transcribe"
    },
    {
     "key": "gt01.extra.3",

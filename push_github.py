@@ -65,6 +65,7 @@ for dp, ds, fs in os.walk(SITE):
 for rel in ['build.py', 'push_github.py',
             '_source/audio_manifest.json', '_source/audio_map_v2.json',
             '_source/audio_map_v3.json', '_source/refine_boundaries.py',
+            '_source/transcribe_dialogue.py', '_source/add_dialogue.py',
             '_source/align_audio_v2.py', '_source/slice_audio_v2.py',
             '_source/transcribe_audio.py',
             '_source/content/kt00.json'] + [
@@ -99,7 +100,7 @@ new_tree = api('%s/git/trees' % base_url, method='POST',
 
 # 5. 提交并更新 ref
 commit = api('%s/git/commits' % base_url, method='POST', data={
-    'message': 'Refine audio boundaries with waveform energy: fix truncated first words (e.g. "in")',
+    'message': 'Add original audio for all 10 lines of Day 1 taxi dialogue (directed transcription)',
     'tree': new_tree['sha'],
     'parents': [parent_sha],
 })
