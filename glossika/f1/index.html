@@ -36,10 +36,12 @@ a{color:inherit;text-decoration:none}
 .bar .spacer{flex:1}
 .bar input{flex:1;min-width:180px;padding:9px 14px;border:1px solid var(--line);
   border-radius:10px;font-size:14px;background:#fff}
-.hint{font-size:12px;color:var(--muted);margin:14px 0 4px}
-.legend{display:inline-flex;gap:12px;flex-wrap:wrap;font-size:12px;margin-top:6px}
-.legend i{font-style:normal;font-weight:700}
-.list{padding:8px 0 60px}
+.modes{display:flex;gap:4px;border:1px solid var(--line);border-radius:10px;padding:3px;background:var(--surface)}
+.modes button{border:0;background:transparent;padding:7px 12px;border-radius:7px;
+  font-size:13px;color:var(--muted);cursor:pointer;transition:.15s}
+.modes button:hover{color:var(--it)}
+.modes button.active{background:var(--it);color:#fff;font-weight:700}
+.list{padding:18px 0 60px}
 .row{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:16px;
   background:var(--surface);border:1px solid var(--line);border-radius:14px;
   margin:12px 0;box-shadow:var(--shadow)}
@@ -58,9 +60,11 @@ a{color:inherit;text-decoration:none}
 .txt.zh{color:var(--ink);font-size:17px;font-weight:600}
 .txt.en{color:var(--en);font-size:15px}
 .txt.it{color:var(--it);font-size:15px;font-weight:600}
+.txt.ipa{color:var(--muted);font-size:12px;letter-spacing:.3px;padding:0 10px;font-style:italic}
 .tag{font-size:10px;font-weight:700;letter-spacing:1px;padding:2px 6px;border-radius:5px;
   background:var(--cream);color:var(--muted);margin-right:6px;vertical-align:2px}
 .line.playing .tag{background:#fff;color:var(--gold)}
+.row.hide-en .line.en,.row.hide-zh .line.zh,.row.hide-ip .txt.ipa{display:none}
 .foot{text-align:center;color:var(--muted);font-size:12px;padding:0 20px 40px}
 </style>
 </head>
@@ -78,17 +82,16 @@ a{color:inherit;text-decoration:none}
 
 <div class="bar"><div class="bar-inner">
   <input id="q" type="text" placeholder="搜索英文 / 意大利语 / 中文…">
+  <div class="modes">
+    <button data-m="all" class="active">三语</button>
+    <button data-m="zh-it">中意</button>
+    <button data-m="it">仅意语</button>
+  </div>
   <div class="spacer"></div>
   <a href="../index.html">← Glossika 书架</a>
 </div></div>
 
 <div class="wrap">
-  <p class="hint">编号、顺序与文件名一一对应：<code>audio/zh/NN.mp3</code>、<code>audio/en/NN.mp3</code>、<code>audio/it/NN.mp3</code>（NN = 01–50）。点击句子播放。</p>
-  <div class="legend">
-    <span><i style="color:var(--zh)">■ 中</i> 中文配音</span>
-    <span><i style="color:var(--en)">■ EN</i> 英语原声</span>
-    <span><i style="color:var(--it)">■ IT</i> 意大利语原声</span>
-  </div>
   <div class="list" id="list"></div>
 </div>
 <div class="foot">英语 / 意大利语音频仅来自用户提供的 mp3 · 中文配音 edge-tts zh-CN-YunxiNeural</div>
@@ -99,12 +102,17 @@ a{color:inherit;text-decoration:none}
   var S = (window.F1_DATA && window.F1_DATA.sentences) || [];
   var list = document.getElementById('list');
   var q = document.getElementById('q');
+  var mode = 'all';
   var audio = null, curLine = null;
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
     return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c];});}
   function stopCur(){
     if(audio){audio.pause();audio=null;}
     if(curLine){curLine.classList.remove('playing');curLine=null;}
+  }
+  function applyMode(d, m){
+    d.classList.toggle('hide-en', m !== 'all');
+    d.classList.toggle('hide-zh', m === 'it');
   }
   function play(line, src){
     if(curLine===line){stopCur();return;}
@@ -120,15 +128,17 @@ a{color:inherit;text-decoration:none}
     stopCur();
     list.innerHTML='';
     S.forEach(function(s){
-      var hay = (s.en+' '+s.it+' '+s.zh).toLowerCase();
+      var hay = (s.en+' '+s.it+' '+s.zh+' '+(s.ipa||'')).toLowerCase();
       if(filter && hay.indexOf(filter)<0) return;
       var d=document.createElement('div'); d.className='row';
+      applyMode(d, mode);
       d.innerHTML =
         '<div class="num">'+s.n+'</div>'+
         '<div class="cell">'+
           '<div class="line zh" data-src="'+s.zhAudio+'"><div class="txt zh"><span class="tag">中</span>'+esc(s.zh)+'</div></div>'+
           '<div class="line en" data-src="'+s.enAudio+'"><div class="txt en"><span class="tag">EN</span>'+esc(s.en)+'</div></div>'+
           '<div class="line it" data-src="'+s.itAudio+'"><div class="txt it"><span class="tag">IT</span>'+esc(s.it)+'</div></div>'+
+          (s.ipa ? '<div class="txt ipa">/'+esc(s.ipa)+'/</div>' : '')+
         '</div>';
       list.appendChild(d);
     });
@@ -136,6 +146,14 @@ a{color:inherit;text-decoration:none}
       el.addEventListener('click',function(){play(el, el.getAttribute('data-src'));});
     });
   }
+  document.querySelectorAll('.modes button').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.modes button').forEach(function(x){x.classList.remove('active');});
+      btn.classList.add('active');
+      mode = btn.getAttribute('data-m');
+      render(q.value);
+    });
+  });
   q.addEventListener('input',function(){render(q.value);});
   render('');
 })();

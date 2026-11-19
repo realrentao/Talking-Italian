@@ -16,7 +16,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(ROOT, 'site')
 CACHE = os.path.join(ROOT, '_push_cache.json')
 base_url = 'https://api.github.com/repos/%s/%s' % (OWNER, REPO)
-MSG = 'Glossika f1 page UX: put Chinese on top, remove play buttons, click sentence to play; no audio changes'
+MSG = 'Glossika f1 page: add 3 view modes (all/zh-it/it) + keep IPA in all modes, remove file/legend hint text; keep click-to-play'
 
 def api(url, method='GET', data=None, timeout=30):
     h = {'Accept': 'application/vnd.github+json',
