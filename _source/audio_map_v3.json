@@ -158,9 +158,10 @@
     "index": 7,
     "it": "Ecco l’albergo Regina Margherita. Sono €10.",
     "start": 570.44,
-    "end": 574.98,
+    "end": 575.62,
     "score": 1.0,
-    "matched": "directed-transcribe"
+    "matched": "directed-transcribe",
+    "orig_end": 574.98
    },
    {
     "key": "gt01.dialogue.8",
