@@ -16,7 +16,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(ROOT, 'site')
 CACHE = os.path.join(ROOT, '_push_cache.json')
 base_url = 'https://api.github.com/repos/%s/%s' % (OWNER, REPO)
-MSG = 'Remove browser TTS site-wide: only play uploaded textbook MP3 audio; simplify hint text; bump to v17'
+MSG = 'Add Glossika Fluency 1 first 50 sentences: per-sentence EN/IT audio sliced from user GMS-B-0001.mp3 + edge-tts zh male voice; new glossika/f1 page'
 
 def api(url, method='GET', data=None, timeout=30):
     h = {'Accept': 'application/vnd.github+json',
