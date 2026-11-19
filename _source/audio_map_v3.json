@@ -750,17 +750,30 @@
     "source": "manual-waveform-e-start-1876/1929"
    },
    {
+    "key": "gt02.plus.5",
+    "group": "plus",
+    "index": 5,
+    "it": "C’è lo sconto?",
+    "start": 1903.0,
+    "end": 1904.15,
+    "orig_start": 1903.0,
+    "orig_end": 1904.15,
+    "score": 1.0,
+    "matched": "e lo sconto",
+    "source": "manual-waveform-italian-sconto-1903"
+   },
+   {
     "key": "gt02.plus.6",
     "group": "plus",
     "index": 6,
     "it": "Ci penso.",
-    "start": 1907.72,
-    "end": 1911.68,
+    "start": 1910.28,
+    "end": 1911.42,
     "orig_start": 1907.72,
-    "orig_end": 1911.72,
+    "orig_end": 1911.68,
     "score": 1.0,
     "matched": "ci penso",
-    "source": "directed-transcribe-waveform"
+    "source": "manual-waveform-italian-only-penso-1910"
    },
    {
     "key": "gt02.plus.7",
