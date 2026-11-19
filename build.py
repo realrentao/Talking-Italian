@@ -245,7 +245,7 @@ def build_lesson(key, d):
   <section class="panel"><h2><span class="ico">🗣️</span>情景对话</h2><p class="hint">先听懂，再跟读；说话人按角色标注。</p>%s</section>
   <section class="panel"><h2><span class="ico">📖</span>%s</h2>%s</section>
   %s
-  <section class="panel"><h2><span class="ico">🧩</span>%s</h2><p class="hint">教材原有听力与跟读任务，已整理为中文。</p><ol class="task-list">%s</ol></section>
+  <section class="panel"><h2><span class="ico">🧩</span>%s</h2><ol class="task-list">%s</ol></section>
   <section class="panel"><h2><span class="ico">💡</span>语言提示</h2>%s</section>
   %s
 </div>''' % (n, n, esc(d['title']), esc(d['orig']), esc(d['lead']), goals,
