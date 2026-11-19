@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """创建 realrentao/Talking-Italian 并推送站点（Git Data API，单次提交）。"""
-import base64, json, os, urllib.request, urllib.error
+import base64, json, os, time, urllib.request, urllib.error
 
 TOKEN = None
 cfg = json.load(open(os.path.expanduser('~/.workbuddy/mcp.json'), encoding='utf-8'))
@@ -17,12 +17,25 @@ def api(url, method='GET', data=None):
     req = urllib.request.Request(url, method=method, headers=h)
     if data is not None:
         req.data = json.dumps(data, ensure_ascii=False).encode('utf-8')
-    try:
-        with urllib.request.urlopen(req) as r:
-            return json.loads(r.read().decode('utf-8'))
-    except urllib.error.HTTPError as e:
-        body = e.read().decode('utf-8', 'ignore')
-        raise RuntimeError('%s %s -> HTTP %s: %s' % (method, url, e.code, body[:400]))
+    last = None
+    for attempt in range(5):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return json.loads(r.read().decode('utf-8'))
+        except urllib.error.HTTPError as e:
+            body = e.read().decode('utf-8', 'ignore')
+            if e.code in (502, 503, 504) and attempt < 4:
+                last = e
+                time.sleep(2 * (attempt + 1))
+                continue
+            raise RuntimeError('%s %s -> HTTP %s: %s' % (method, url, e.code, body[:400]))
+        except urllib.error.URLError as e:
+            if attempt < 4:
+                last = e
+                time.sleep(2 * (attempt + 1))
+                continue
+            raise RuntimeError('%s %s -> %s' % (method, url, e))
+    raise RuntimeError('%s %s -> %s' % (method, url, last))
 
 # 1. 仓库是否存在
 repo_url = 'https://api.github.com/repos/%s/%s' % (OWNER, REPO)
@@ -51,6 +64,7 @@ for dp, ds, fs in os.walk(SITE):
         files[rel] = open(full, 'rb').read()
 for rel in ['build.py', 'push_github.py',
             '_source/audio_manifest.json', '_source/audio_map_v2.json',
+            '_source/audio_map_v3.json', '_source/refine_boundaries.py',
             '_source/align_audio_v2.py', '_source/slice_audio_v2.py',
             '_source/transcribe_audio.py',
             '_source/content/kt00.json'] + [
@@ -85,7 +99,7 @@ new_tree = api('%s/git/trees' % base_url, method='POST',
 
 # 5. 提交并更新 ref
 commit = api('%s/git/commits' % base_url, method='POST', data={
-    'message': 'Fix audio clip boundaries with word-level alignment (no truncated sentences)',
+    'message': 'Refine audio boundaries with waveform energy: fix truncated first words (e.g. "in")',
     'tree': new_tree['sha'],
     'parents': [parent_sha],
 })

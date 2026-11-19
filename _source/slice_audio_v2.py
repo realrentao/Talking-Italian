@@ -5,7 +5,7 @@ import json, os, subprocess, sys
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.dirname(ROOT)
 MP3 = sys.argv[1] if len(sys.argv) > 1 else 'D:/Get Talking Keep talking Italian/Get Talking Italian in Ten Days.mp3'
-MAP = os.path.join(ROOT, 'audio_map_v2.json')
+MAP = os.environ.get('AUDIO_MAP', os.path.join(ROOT, 'audio_map_v2.json'))
 OUTROOT = os.path.join(SITE, 'site', 'audio', 'get')
 PAD = float(os.environ.get('PAD', '0.06'))  # 词边界已精确，仅留极小缓冲
 
