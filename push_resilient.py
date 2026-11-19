@@ -16,7 +16,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(ROOT, 'site')
 CACHE = os.path.join(ROOT, '_push_cache.json')
 base_url = 'https://api.github.com/repos/%s/%s' % (OWNER, REPO)
-MSG = 'Fix clipped "euro" tail in Day 1 dialogue line 7'
+MSG = 'Add original audio for 3 destination phrases in Day 1 extra section'
 
 def api(url, method='GET', data=None, timeout=30):
     h = {'Accept': 'application/vnd.github+json',
@@ -56,6 +56,7 @@ for rel in ['build.py', 'push_github.py', 'push_resilient.py',
             '_source/add_dialogue.py', '_source/align_audio_v2.py',
             '_source/fix_dialogue_starts.py', '_source/check_dialogue_starts.py',
             '_source/fix_euro_tail.py', '_source/check_tails.py', '_source/probe_tails.py',
+            '_source/transcribe_extra.py', '_source/add_extra_three.py', '_source/probe_extra.py',
             '_source/slice_audio_v2.py', '_source/transcribe_audio.py',
             '_source/content/kt00.json'] + [
             '_source/content/%s%02d.json' % (p, i)

@@ -278,6 +278,36 @@
     "matched": "minuti a piedi",
     "orig_start": 1136.68,
     "orig_end": 1138.06
+   },
+   {
+    "key": "gt01.extra.0",
+    "group": "extra",
+    "index": 0,
+    "it": "Alla stazione, per favore.",
+    "start": 947.8,
+    "end": 949.94,
+    "score": 1.0,
+    "matched": "directed-transcribe-waveform"
+   },
+   {
+    "key": "gt01.extra.1",
+    "group": "extra",
+    "index": 1,
+    "it": "All’aeroporto, per favore.",
+    "start": 958.76,
+    "end": 961.04,
+    "score": 1.0,
+    "matched": "directed-transcribe-waveform"
+   },
+   {
+    "key": "gt01.extra.2",
+    "group": "extra",
+    "index": 2,
+    "it": "Al museo, per favore.",
+    "start": 969.84,
+    "end": 971.84,
+    "score": 1.0,
+    "matched": "directed-transcribe-waveform"
    }
   ]
  },
