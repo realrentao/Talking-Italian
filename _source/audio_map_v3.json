@@ -715,13 +715,13 @@
     "group": "plus",
     "index": 2,
     "it": "È economico.",
-    "start": 1877.32,
-    "end": 1878.62,
-    "orig_start": 1877.38,
-    "orig_end": 1878.66,
+    "start": 1876.82,
+    "end": 1878.48,
+    "orig_start": 1877.32,
+    "orig_end": 1878.62,
     "score": 1.0,
     "matched": "e economico",
-    "source": "directed-transcribe-waveform"
+    "source": "manual-waveform-e-start-1876/1929"
    },
    {
     "key": "gt02.plus.3",
@@ -741,13 +741,13 @@
     "group": "plus",
     "index": 4,
     "it": "È troppo caro.",
-    "start": 1929.56,
-    "end": 1931.24,
-    "orig_start": 1929.58,
-    "orig_end": 1931.28,
+    "start": 1929.26,
+    "end": 1930.9,
+    "orig_start": 1929.56,
+    "orig_end": 1931.24,
     "score": 1.0,
     "matched": "e troppo caro",
-    "source": "directed-transcribe-waveform"
+    "source": "manual-waveform-e-start-1876/1929"
    },
    {
     "key": "gt02.plus.6",
