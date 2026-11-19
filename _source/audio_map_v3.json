@@ -690,13 +690,13 @@
     "group": "plus",
     "index": 0,
     "it": "È caro.",
-    "start": 1867.46,
-    "end": 1869.28,
-    "orig_start": 1867.84,
-    "orig_end": 1869.32,
+    "start": 1860.54,
+    "end": 1861.38,
+    "orig_start": 1867.46,
+    "orig_end": 1869.28,
     "score": 1.0,
     "matched": "e caro",
-    "source": "directed-transcribe-waveform"
+    "source": "manual-waveform-caro-1860"
    },
    {
     "key": "gt02.plus.1",

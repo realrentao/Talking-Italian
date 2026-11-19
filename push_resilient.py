@@ -16,7 +16,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(ROOT, 'site')
 CACHE = os.path.join(ROOT, '_push_cache.json')
 base_url = 'https://api.github.com/repos/%s/%s' % (OWNER, REPO)
-MSG = 'Fix Day2 money expressions: use Italian narration for cinque euro, restore cut first words for centesimi and venti euro; bump to v13'
+MSG = 'Fix Day2 È caro: was playing non è caro, remap to correct Italian affirmative; bump to v14'
 
 def api(url, method='GET', data=None, timeout=30):
     h = {'Accept': 'application/vnd.github+json',
