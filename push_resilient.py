@@ -16,7 +16,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(ROOT, 'site')
 CACHE = os.path.join(ROOT, '_push_cache.json')
 base_url = 'https://api.github.com/repos/%s/%s' % (OWNER, REPO)
-MSG = 'Remove redundant hint line from practice section on all lessons'
+MSG = 'Extend original-audio alignment from Day1 to all 10 days: wordstream recovery + directed transcription + waveform boundaries; rebuild with v11'
 
 def api(url, method='GET', data=None, timeout=30):
     h = {'Accept': 'application/vnd.github+json',
@@ -50,6 +50,16 @@ for dp, ds, fs in os.walk(SITE):
         full = os.path.join(dp, f)
         rel = os.path.relpath(full, SITE).replace('\\', '/')
         files[rel] = open(full, 'rb').read()
+
+# Glossika 三语站（独立目录，推到仓库 glossika/ 路径）
+GLOSS = os.path.join(ROOT, 'glossika')
+if os.path.isdir(GLOSS):
+    for dp, ds, fs in os.walk(GLOSS):
+        for f in fs:
+            full = os.path.join(dp, f)
+            rel = 'glossika/' + os.path.relpath(full, GLOSS).replace('\\', '/')
+            files[rel] = open(full, 'rb').read()
+
 for rel in ['build.py', 'push_github.py', 'push_resilient.py',
             '_source/audio_manifest.json', '_source/audio_map_v3.json',
             '_source/refine_boundaries.py', '_source/transcribe_dialogue.py',
@@ -59,6 +69,13 @@ for rel in ['build.py', 'push_github.py', 'push_resilient.py',
             '_source/transcribe_extra.py', '_source/add_extra_three.py', '_source/probe_extra.py',
             '_source/transcribe_distance.py', '_source/probe_distance.py', '_source/add_distance.py',
             '_source/slice_audio_v2.py', '_source/transcribe_audio.py',
+            '_source/audit_missing.py', '_source/apply_missing.py',
+            '_source/batch_directed.py', '_source/scan_slice_edges.py',
+            '_source/check_all_starts.py', '_source/verify_starts.py',
+            '_source/apply_starts.py', '_source/fix_suspect.py', '_source/diag_tail.py',
+            '_source/glossika_extract.py', '_source/glossika_prepare.py',
+            '_source/glossika_translate.py', '_source/glossika_build.py',
+            '_source/glossika/lessons.json', '_source/glossika/translations.json',
             '_source/content/kt00.json'] + [
             '_source/content/%s%02d.json' % (p, i)
             for p in ('gt', 'kt') for i in range(1, 11)]:

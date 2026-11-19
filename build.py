@@ -98,7 +98,15 @@ def build_home():
   <div class="tag-row"><span class="tag">A1 入门</span><span class="tag">20 天课程</span><span class="tag">意中对照</span><span class="tag">点击发音</span></div>
   <a class="card-cta" href="talking-ten-days/index.html">进入教材</a>
 </article>''')
-    for i in range(2, 6):
+    cards.append('''<article class="book-card">
+  <div class="card-top"><span class="badge live">已接入 · 第 2 册</span><span class="card-no">BOOK 02</span></div>
+  <h3>Glossika 意大利语流利度</h3>
+  <div class="orig">Glossika Italian Fluency 1 / 2 / 3</div>
+  <p class="desc">三册共 3000 个高频句型，中英意三语逐句对照，附意大利语 IPA 发音。点击意语即可听读，适合跟读与句型积累。</p>
+  <div class="tag-row"><span class="tag">3000 句型</span><span class="tag">30 课</span><span class="tag">中英意对照</span><span class="tag">点击发音</span></div>
+  <a class="card-cta" href="glossika/index.html">进入教材</a>
+</article>''')
+    for i in range(3, 6):
         cards.append('''<article class="book-card placeholder">
   <div class="card-top"><span class="badge soon">预留入口</span><span class="card-no">BOOK %02d</span></div>
   <div class="slot-mark">＋</div>
@@ -113,15 +121,15 @@ def build_home():
   <h1>意大利语学习书架</h1>
   <p>以教材为单位组织学习。点开一册，逐级展开课程；学完随时回到这里，切换到下一册。</p>
   <div class="hero-stats">
-    <div class="hero-stat"><b>1</b><span>已接入教材</span></div>
-    <div class="hero-stat"><b>20</b><span>可学课程</span></div>
-    <div class="hero-stat"><b>4</b><span>预留教材位</span></div>
+    <div class="hero-stat"><b>2</b><span>已接入教材</span></div>
+    <div class="hero-stat"><b>50</b><span>可学课程</span></div>
+    <div class="hero-stat"><b>3</b><span>预留教材位</span></div>
   </div>
 </div></header>
 <div class="wrap"><section class="section">
   <div class="section-head"><h2>教材书架</h2><span class="sub">每册一个入口 · 版式与展开规则一致</span></div>
   <div class="card-grid">%s</div>
-  <div class="notice"><b>说明：</b>当前接入的《十天开口说 · 十天流利说》只是全部教材中的一册，并非唯一教材。其余卡片为同层级预留位，后续可直接追加，无需改动现有页面。</div>
+  <div class="notice"><b>说明：</b>当前接入《十天开口说 · 十天流利说》与《Glossika 意大利语流利度》两套教材，均非唯一教材。其余卡片为同层级预留位，后续可直接追加，无需改动现有页面。</div>
 </section></div>''' % '\n'.join(cards)
     write('index.html', shell('总导航', 0, body, active='home'))
 
