@@ -15,7 +15,7 @@ def load(name):
 
 # 教材原声切片映射（可选；未生成时自动回退浏览器合成音）
 AUDIO = {}
-_audio_path = os.path.join(ROOT, '_source', 'audio_map.json')
+_audio_path = os.environ.get('AUDIO_MAP', os.path.join(ROOT, '_source', 'audio_map.json'))
 if os.path.exists(_audio_path):
     with open(_audio_path, encoding='utf-8') as f:
         _audio_raw = json.load(f)

@@ -50,13 +50,15 @@ for dp, ds, fs in os.walk(SITE):
         rel = os.path.relpath(full, SITE).replace('\\', '/')
         files[rel] = open(full, 'rb').read()
 for rel in ['build.py', 'push_github.py',
-            '_source/audio_manifest.json',
+            '_source/audio_manifest.json', '_source/audio_map_v2.json',
+            '_source/align_audio_v2.py', '_source/slice_audio_v2.py',
+            '_source/transcribe_audio.py',
             '_source/content/kt00.json'] + [
             '_source/content/%s%02d.json' % (p, i)
             for p in ('gt', 'kt') for i in range(1, 11)]:
     full = os.path.join(ROOT, rel.replace('/', os.sep))
     if os.path.exists(full):
-        files['_source/content/' + os.path.basename(full) if rel.startswith('_source') else rel] = open(full, 'rb').read()
+        files[rel] = open(full, 'rb').read()
 files['README.md'] = ('# Talking-Italian\n\n'
     '意大利语学习网站：以教材为单位的总导航页 + 逐级展开的课程页。\n\n'
     '- 在线访问：https://realrentao.github.io/Talking-Italian/\n'
@@ -83,7 +85,7 @@ new_tree = api('%s/git/trees' % base_url, method='POST',
 
 # 5. 提交并更新 ref
 commit = api('%s/git/commits' % base_url, method='POST', data={
-    'message': 'Add original Italian audio (220 clips) to Get Talking 10 lessons',
+    'message': 'Fix audio clip boundaries with word-level alignment (no truncated sentences)',
     'tree': new_tree['sha'],
     'parents': [parent_sha],
 })
