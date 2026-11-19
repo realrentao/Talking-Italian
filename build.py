@@ -32,7 +32,9 @@ def audio_attr(day, group, idx):
     rel = 'audio/get/gt%02d/%s_%d.mp3' % (day, group, idx)
     if not os.path.exists(os.path.join(SITE, rel)):
         return ''
-    return ' data-audio="../../%s"' % rel
+    # 版本号 query 强制浏览器重新取音频，避免同名文件被强缓存（切片重切后内容变了）
+    ver = os.environ.get('AUDIO_VER', 'v3')
+    return ' data-audio="../../%s?%s"' % (rel, ver)
 
 def shell(title, depth, body, breadcrumb='', active=''):
     p = '../' * depth
