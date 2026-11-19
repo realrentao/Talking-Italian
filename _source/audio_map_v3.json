@@ -87,30 +87,36 @@
     "group": "dialogue",
     "index": 1,
     "it": "Buongiorno. Devo andare all’albergo Regina Margherita.",
-    "start": 549.34,
+    "start": 549.02,
     "end": 554.16,
     "score": 1.0,
-    "matched": "directed-transcribe"
+    "matched": "directed-transcribe",
+    "orig_start": 549.34,
+    "orig_end": 554.16
    },
    {
     "key": "gt01.dialogue.2",
     "group": "dialogue",
     "index": 2,
     "it": "In quale via?",
-    "start": 555.32,
+    "start": 555.22,
     "end": 556.48,
     "score": 1.0,
-    "matched": "directed-transcribe"
+    "matched": "directed-transcribe",
+    "orig_start": 555.32,
+    "orig_end": 556.48
    },
    {
     "key": "gt01.dialogue.3",
     "group": "dialogue",
     "index": 3,
     "it": "In via Pace.",
-    "start": 557.18,
-    "end": 557.94,
+    "start": 556.94,
+    "end": 558.0,
     "score": 1.0,
-    "matched": "directed-transcribe"
+    "matched": "directed-transcribe",
+    "orig_start": 557.18,
+    "orig_end": 557.94
    },
    {
     "key": "gt01.dialogue.4",
@@ -127,20 +133,24 @@
     "group": "dialogue",
     "index": 5,
     "it": "Al numero otto, credo.",
-    "start": 562.28,
+    "start": 562.13,
     "end": 564.64,
     "score": 1.0,
-    "matched": "directed-transcribe"
+    "matched": "directed-transcribe",
+    "orig_start": 562.28,
+    "orig_end": 564.64
    },
    {
     "key": "gt01.dialogue.6",
     "group": "dialogue",
     "index": 6,
     "it": "Va bene, al numero otto di via Pace.",
-    "start": 564.88,
+    "start": 564.78,
     "end": 568.42,
     "score": 1.0,
-    "matched": "directed-transcribe"
+    "matched": "directed-transcribe",
+    "orig_start": 564.88,
+    "orig_end": 568.42
    },
    {
     "key": "gt01.dialogue.7",

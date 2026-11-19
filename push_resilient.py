@@ -5,7 +5,7 @@
   python push_resilient.py            # 开始/继续推送
 blob 上传进度存于 _push_cache.json（path -> sha），中断后重跑会跳过已上传的 blob。
 """
-import base64, json, os, socket, sys, time, urllib.request, urllib.error
+import base64, hashlib, json, os, socket, sys, time, urllib.request, urllib.error
 
 socket.setdefaulttimeout(30)  # 全局 socket 超时，防止代理层无限 hang
 
@@ -16,7 +16,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(ROOT, 'site')
 CACHE = os.path.join(ROOT, '_push_cache.json')
 base_url = 'https://api.github.com/repos/%s/%s' % (OWNER, REPO)
-MSG = 'Add original audio for all 10 lines of Day 1 taxi dialogue (directed transcription)'
+MSG = 'Fix clipped first words in 5 Day 1 dialogue lines (waveform start snapping)'
 
 def api(url, method='GET', data=None, timeout=30):
     h = {'Accept': 'application/vnd.github+json',
@@ -54,6 +54,7 @@ for rel in ['build.py', 'push_github.py', 'push_resilient.py',
             '_source/audio_manifest.json', '_source/audio_map_v3.json',
             '_source/refine_boundaries.py', '_source/transcribe_dialogue.py',
             '_source/add_dialogue.py', '_source/align_audio_v2.py',
+            '_source/fix_dialogue_starts.py', '_source/check_dialogue_starts.py',
             '_source/slice_audio_v2.py', '_source/transcribe_audio.py',
             '_source/content/kt00.json'] + [
             '_source/content/%s%02d.json' % (p, i)
@@ -72,16 +73,18 @@ if os.path.exists(CACHE):
     try: cache = json.load(open(CACHE, encoding='utf-8'))
     except Exception: cache = {}
 
-# 逐个上传 blob（带进度落盘）
+# 逐个上传 blob（带进度落盘）。缓存值存 "sha|md5"，内容变了会重新上传。
 for i, (path, content) in enumerate(sorted(files.items()), 1):
-    if path in cache:
+    cm = hashlib.md5(content).hexdigest()
+    cached = cache.get(path, '')
+    if '|' in cached and cached.split('|', 1)[1] == cm:
         continue
     digest = base64.b64encode(content).decode('ascii')
     for attempt in range(4):
         try:
             b = api('%s/git/blobs' % base_url, method='POST',
                     data={'content': digest, 'encoding': 'base64'}, timeout=25)
-            cache[path] = b['sha']
+            cache[path] = b['sha'] + '|' + cm
             json.dump(cache, open(CACHE, 'w', encoding='utf-8'))
             break
         except Exception as e:
@@ -98,7 +101,7 @@ parent_sha = ref['object']['sha']
 parent = api('%s/git/commits/%s' % (base_url, parent_sha))
 base_tree = parent['tree']['sha']
 
-tree = [{'path': p, 'mode': '100644', 'type': 'blob', 'sha': cache[p]}
+tree = [{'path': p, 'mode': '100644', 'type': 'blob', 'sha': cache[p].split('|', 1)[0]}
         for p in sorted(files)]
 new_tree = api('%s/git/trees' % base_url, method='POST',
                data={'base_tree': base_tree, 'tree': tree})
