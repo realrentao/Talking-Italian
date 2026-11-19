@@ -18,6 +18,7 @@
       '<a href="#/book/1"' + (active === 'b1' ? ' class="active"' : '') + '>Fluency 1</a>' +
       '<a href="#/book/2"' + (active === 'b2' ? ' class="active"' : '') + '>Fluency 2</a>' +
       '<a href="#/book/3"' + (active === 'b3' ? ' class="active"' : '') + '>Fluency 3</a>' +
+      '<a href="f1/index.html" style="color:#C0392B;font-weight:700">🎧 逐句发音版</a>' +
       '<a href="../index.html">← 书架</a>';
   }
   function loadData(book, cb) {
@@ -38,7 +39,9 @@
       '<p>三册共 3000 个高频句型，中 / 英 / 意三语逐句对照，附意大利语 IPA 发音。发音仅来自已上传的教材原声 mp3，适合跟读与句型积累。</p>' +
       '<div class="hero-stats"><div class="hero-stat"><b>3</b><span>册</span></div>' +
       '<div class="hero-stat"><b>30</b><span>课</span></div>' +
-      '<div class="hero-stat"><b>3000</b><span>句型</span></div></div></div></header>' +
+      '<div class="hero-stat"><b>3000</b><span>句型</span></div></div>' +
+      '<p style="margin-top:16px"><a href="f1/index.html" style="display:inline-block;background:#fff;color:#C0392B;font-weight:700;padding:10px 20px;border-radius:10px">🎧 进入中英意逐句原声发音版（已上线 50 句）→</a></p>' +
+      '</div></header>' +
       '<div class="wrap"><section class="section"><div class="section-head"><h2>选择分册</h2>' +
       '<span class="sub">每册 1000 句 · 分 10 课 · 每课 100 句</span></div><div class="card-grid">' +
       [1, 2, 3].map(function (b) {
