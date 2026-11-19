@@ -16,7 +16,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(ROOT, 'site')
 CACHE = os.path.join(ROOT, '_push_cache.json')
 base_url = 'https://api.github.com/repos/%s/%s' % (OWNER, REPO)
-MSG = 'Complete Glossika trilingual Chinese translations (3000/3000) for all 3 books'
+MSG = 'Fix Day2 audio: add missing Una Fiat Punto narration and restore truncated desidera tail; bump to v12'
 
 def api(url, method='GET', data=None, timeout=30):
     h = {'Accept': 'application/vnd.github+json',

@@ -388,12 +388,13 @@
     "group": "core",
     "index": 1,
     "it": "Quale macchina desidera?",
-    "start": 1281.52,
-    "end": 1282.56,
+    "start": 1334.98,
+    "end": 1336.7,
     "score": 0.8,
-    "matched": "quale macchina",
-    "orig_start": 1281.82,
-    "orig_end": 1282.56
+    "matched": "quale macchina desidera",
+    "orig_start": 1281.52,
+    "orig_end": 1282.56,
+    "source": "manual-waveform-1335"
    },
    {
     "key": "gt02.core.2",
@@ -475,12 +476,26 @@
     "group": "dialogue",
     "index": 1,
     "it": "Quale macchina desidera?",
-    "start": 1281.52,
-    "end": 1282.56,
+    "start": 1334.98,
+    "end": 1336.7,
     "score": 0.8,
-    "matched": "quale macchina",
-    "orig_start": 1281.82,
-    "orig_end": 1282.56
+    "matched": "quale macchina desidera",
+    "orig_start": 1281.52,
+    "orig_end": 1282.56,
+    "source": "manual-waveform-1335"
+   },
+   {
+    "key": "gt02.dialogue.2",
+    "group": "dialogue",
+    "index": 2,
+    "it": "Una Fiat Punto.",
+    "start": 1337.32,
+    "end": 1338.82,
+    "orig_start": 1337.32,
+    "orig_end": 1338.82,
+    "score": 1.0,
+    "matched": "una fiat punto",
+    "source": "manual-waveform-1337"
    },
    {
     "key": "gt02.dialogue.3",
