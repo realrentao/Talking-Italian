@@ -5,6 +5,44 @@
   var NAV = document.getElementById('nav-links');
   var DATA = {};
   var currentAudio = null;
+  var pool = {};  // src -> Audio 缓存，同一音频不重复创建/下载
+  var idle = window.requestIdleCallback || function (fn) { return setTimeout(fn, 300); };
+
+  function getAudio(src) {
+    var a = pool[src];
+    if (!a) {
+      a = new Audio(src);
+      a.preload = 'auto';
+      pool[src] = a;
+    }
+    return a;
+  }
+
+  // 空闲时预加载相邻几句的三语原声（只取 metadata，省流量）
+  function prewarm(el) {
+    var row = el.closest ? el.closest('.sent') : null;
+    if (!row || !row.parentNode) return;
+    var rows = [].slice.call(row.parentNode.children);
+    var i = rows.indexOf(row);
+    if (i < 0) return;
+    var near = [];
+    for (var d = 1; d <= 2; d++) {
+      if (rows[i - d]) near.push(rows[i - d]);
+      if (rows[i + d]) near.push(rows[i + d]);
+    }
+    idle(function () {
+      near.forEach(function (r) {
+        [].slice.call(r.querySelectorAll('[data-audio]')).forEach(function (n) {
+          var src = n.getAttribute('data-audio');
+          if (src && !pool[src]) {
+            var a = new Audio(src);
+            a.preload = 'metadata';
+            pool[src] = a;
+          }
+        });
+      });
+    });
+  }
 
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
@@ -38,7 +76,7 @@
       '<div class="hero-stats"><div class="hero-stat"><b>3</b><span>册</span></div>' +
       '<div class="hero-stat"><b>30</b><span>课</span></div>' +
       '<div class="hero-stat"><b>3000</b><span>句型</span></div></div>' +
-      '<p style="margin-top:16px"><a href="#/lesson/G1-L01" style="display:inline-block;background:#fff;color:#C0392B;font-weight:700;padding:10px 20px;border-radius:10px">🎧 进入逐句原声发音（已上线 50 句）→</a></p>' +
+      '<p style="margin-top:16px"><a href="#/lesson/G1-L01" style="display:inline-block;background:#fff;color:#C0392B;font-weight:700;padding:10px 20px;border-radius:10px">🎧 进入逐句原声发音（Fluency 1 已上线 1000 句）→</a></p>' +
       '</div></header>' +
       '<div class="wrap"><section class="section"><div class="section-head"><h2>选择分册</h2>' +
       '<span class="sub">每册 1000 句 · 分 10 课 · 每课 100 句</span></div><div class="card-grid">' +
@@ -132,20 +170,22 @@
   window.speakEl = function (el) {
     var src = el.getAttribute('data-audio');
     if (!src) return;
-    if (currentAudio) { try { currentAudio.pause(); } catch (e) {} }
+    if (currentAudio) { try { currentAudio.pause(); currentAudio.currentTime = 0; } catch (e) {} }
     document.querySelectorAll('#list .line.playing').forEach(function (x) { x.classList.remove('playing'); });
+    document.querySelectorAll('#list .sent.speaking').forEach(function (x) { x.classList.remove('speaking'); });
     var row = el.closest ? el.closest('.sent') : null;
     if (row) row.classList.add('speaking');
     el.classList.add('playing');
     var clear = function () { el.classList.remove('playing'); if (row) row.classList.remove('speaking'); };
     try {
-      var a = new Audio(src);
+      var a = getAudio(src);
       currentAudio = a;
-      a.preload = 'auto';
       a.onended = clear;
       a.onerror = clear;
+      try { a.currentTime = 0; } catch (e) {}
       var p = a.play();
       if (p && p.catch) p.catch(clear);
+      prewarm(el);
     } catch (e) {
       clear();
     }
