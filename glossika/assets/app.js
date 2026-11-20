@@ -22,7 +22,7 @@
   function loadData(book, cb) {
     if (DATA[book]) return cb(DATA[book]);
     var s = document.createElement('script');
-    s.src = 'data/book' + book + '.js?v24';
+    s.src = 'data/book' + book + '.js?v25';
     s.onload = function () { DATA[book] = window['GLOSSIKA_B' + book]; cb(DATA[book]); };
     s.onerror = function () { VIEWS.innerHTML = '<div class="wrap"><p>数据加载失败</p></div>'; };
     document.head.appendChild(s);
