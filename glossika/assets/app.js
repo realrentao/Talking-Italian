@@ -12,7 +12,9 @@
   var queue = [];
   var fetching = false;
   var MAX_CACHE = 6;
-  var idle = window.requestIdleCallback || function (fn) { return setTimeout(fn, 500); };
+  var idle = window.requestIdleCallback
+    ? function (fn) { window.requestIdleCallback(fn, { timeout: 600 }); }
+    : function (fn) { setTimeout(fn, 200); };
   var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
   var canFetch = typeof fetch === 'function' &&
                  typeof URL !== 'undefined' && typeof URL.createObjectURL === 'function';
@@ -44,10 +46,9 @@
     }
   }
 
-  // 串行、低优先级预取；播放中不抢带宽
+  // 串行、低优先级预取；音频都很小，播放中保持 1 个请求，点下一句才能命中缓存
   function pump() {
     if (fetching || !queue.length || !canFetch) return;
-    if (player && !player.paused) { setTimeout(pump, 600); return; }
     var src = queue.shift();
     var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
     var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 8000);
