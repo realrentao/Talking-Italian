@@ -4,21 +4,83 @@
   var VIEWS = document.getElementById('view');
   var NAV = document.getElementById('nav-links');
   var DATA = {};
-  var currentAudio = null;
-  var pool = {};  // src -> Audio 缓存，同一音频不重复创建/下载
-  var idle = window.requestIdleCallback || function (fn) { return setTimeout(fn, 300); };
+  var player = null;                  // 全页共用一个 Audio，避免 1000 句时对象池膨胀
+  var currentSrc = null;
+  var blobUrls = Object.create(null);
+  var pending = Object.create(null);
+  var cacheOrder = [];
+  var queue = [];
+  var fetching = false;
+  var MAX_CACHE = 6;
+  var idle = window.requestIdleCallback || function (fn) { return setTimeout(fn, 500); };
+  var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  var canFetch = typeof fetch === 'function' &&
+                 typeof URL !== 'undefined' && typeof URL.createObjectURL === 'function';
 
-  function getAudio(src) {
-    var a = pool[src];
-    if (!a) {
-      a = new Audio(src);
-      a.preload = 'auto';
-      pool[src] = a;
+  function ensurePlayer() {
+    if (!player) {
+      player = new Audio();
+      player.preload = 'none';   // ima/WebView 下 auto/metadata 常被当成整文件预取
+      player.setAttribute('playsinline', '');
     }
-    return a;
+    return player;
   }
 
-  // 空闲时预加载相邻几句的三语原声（只取 metadata，省流量）
+  function revoke(src) {
+    var u = blobUrls[src];
+    if (!u) return;
+    try { URL.revokeObjectURL(u); } catch (e) {}
+    delete blobUrls[src];
+  }
+
+  function remember(src, url) {
+    if (blobUrls[src]) return;
+    blobUrls[src] = url;
+    cacheOrder.push(src);
+    while (cacheOrder.length > MAX_CACHE) {
+      var old = cacheOrder.shift();
+      if (old === currentSrc) { cacheOrder.push(old); continue; }
+      revoke(old);
+    }
+  }
+
+  // 串行、低优先级预取；播放中不抢带宽
+  function pump() {
+    if (fetching || !queue.length || !canFetch) return;
+    if (player && !player.paused) { setTimeout(pump, 600); return; }
+    var src = queue.shift();
+    var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 8000);
+    var opt = { credentials: 'omit', cache: 'default' };
+    if (ctrl) opt.signal = ctrl.signal;
+    try { opt.priority = 'low'; } catch (e) {}
+    fetching = true;
+    fetch(src, opt)
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.blob(); })
+      .then(function (b) { remember(src, URL.createObjectURL(b)); })
+      .catch(function () {})
+      .then(function () {
+        clearTimeout(timer);
+        delete pending[src];
+        fetching = false;
+        pump();
+      });
+  }
+
+  function enqueue(src) {
+    if (!src || !canFetch || blobUrls[src] || pending[src]) return;
+    if (conn && conn.saveData) return;
+    pending[src] = true;
+    queue.push(src);
+    pump();
+  }
+
+  function langOf(src) {
+    var m = /(?:^|\/)audio\/([a-z]{2})\//.exec(src || '');
+    return m ? m[1] : '';
+  }
+
+  // 点击后只预热相邻两句的同语种原声：从 12 个请求降到 2 个
   function prewarm(el) {
     var row = el.closest ? el.closest('.sent') : null;
     if (!row || !row.parentNode) return;
@@ -26,19 +88,15 @@
     var i = rows.indexOf(row);
     if (i < 0) return;
     var near = [];
-    for (var d = 1; d <= 2; d++) {
-      if (rows[i - d]) near.push(rows[i - d]);
-      if (rows[i + d]) near.push(rows[i + d]);
-    }
+    if (rows[i - 1]) near.push(rows[i - 1]);
+    if (rows[i + 1]) near.push(rows[i + 1]);
+    var lang = langOf(el.getAttribute('data-audio'));
     idle(function () {
+      if (document.hidden) return;
       near.forEach(function (r) {
         [].slice.call(r.querySelectorAll('[data-audio]')).forEach(function (n) {
           var src = n.getAttribute('data-audio');
-          if (src && !pool[src]) {
-            var a = new Audio(src);
-            a.preload = 'metadata';
-            pool[src] = a;
-          }
+          if (src && (!lang || langOf(src) === lang)) enqueue(src);
         });
       });
     });
@@ -170,7 +228,6 @@
   window.speakEl = function (el) {
     var src = el.getAttribute('data-audio');
     if (!src) return;
-    if (currentAudio) { try { currentAudio.pause(); currentAudio.currentTime = 0; } catch (e) {} }
     document.querySelectorAll('#list .line.playing').forEach(function (x) { x.classList.remove('playing'); });
     document.querySelectorAll('#list .sent.speaking').forEach(function (x) { x.classList.remove('speaking'); });
     var row = el.closest ? el.closest('.sent') : null;
@@ -178,11 +235,14 @@
     el.classList.add('playing');
     var clear = function () { el.classList.remove('playing'); if (row) row.classList.remove('speaking'); };
     try {
-      var a = getAudio(src);
-      currentAudio = a;
+      var a = ensurePlayer();
+      try { a.pause(); } catch (e) {}
+      var url = blobUrls[src] || src;
+      if (a.src !== url) a.src = url;
+      currentSrc = src;
+      try { a.currentTime = 0; } catch (e) {}
       a.onended = clear;
       a.onerror = clear;
-      try { a.currentTime = 0; } catch (e) {}
       var p = a.play();
       if (p && p.catch) p.catch(clear);
       prewarm(el);

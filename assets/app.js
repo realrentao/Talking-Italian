@@ -1,63 +1,114 @@
 /* 点击意大利语文本即发音：只播放上传的教材原声 mp3，不使用浏览器合成音。
-   性能：音频对象池复用（同一 src 不重复下载）+ 相邻句空闲预加载。 */
+   ima/WebView 优化：单 Audio 实例 + preload=none；点击后用 fetch 低优先级预取相邻 2 句；
+   小体积 Blob URL 缓存（LRU 6），避免内置浏览器里一堆 Audio 同时抢网络。 */
 (function () {
-  var current = null;          // 当前正在播放的 Audio
-  var pool = {};               // src -> Audio 缓存，避免重复创建/下载
-  var idle = window.requestIdleCallback || function (fn) { return setTimeout(fn, 300); };
+  var player = null;                  // 全页共用一个 Audio，避免对象池无限膨胀
+  var currentSrc = null;              // 当前播放对应的原始 src（用于保护 Blob）
+  var blobUrls = Object.create(null); // src -> blob URL
+  var pending = Object.create(null);  // 正在预取的 src
+  var cacheOrder = [];                // LRU
+  var queue = [];                     // 串行预取队列
+  var fetching = false;
+  var MAX_CACHE = 6;
+  var idle = window.requestIdleCallback || function (fn) { return setTimeout(fn, 500); };
+  var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  var canFetch = typeof fetch === 'function' &&
+                 typeof URL !== 'undefined' && typeof URL.createObjectURL === 'function';
 
-  function getAudio(src) {
-    var a = pool[src];
-    if (!a) {
-      a = new Audio(src);
-      a.preload = 'auto';
-      pool[src] = a;
+  function ensurePlayer() {
+    if (!player) {
+      player = new Audio();
+      player.preload = 'none';   // 关键：ima/WebView 下 auto/metadata 都可能被当成整文件预取
+      player.setAttribute('playsinline', '');
     }
-    return a;
+    return player;
   }
 
-  // 收集页面上所有可发音元素，预加载当前句附近的几句（只取 metadata，省流量）
+  function revoke(src) {
+    var u = blobUrls[src];
+    if (!u) return;
+    try { URL.revokeObjectURL(u); } catch (e) {}
+    delete blobUrls[src];
+  }
+
+  function remember(src, url) {
+    if (blobUrls[src]) return;
+    blobUrls[src] = url;
+    cacheOrder.push(src);
+    while (cacheOrder.length > MAX_CACHE) {
+      var old = cacheOrder.shift();
+      if (old === currentSrc) { cacheOrder.push(old); continue; }
+      revoke(old);
+    }
+  }
+
+  // 串行、低优先级预取；播放中不抢带宽，播完再继续
+  function pump() {
+    if (fetching || !queue.length || !canFetch) return;
+    if (player && !player.paused) { setTimeout(pump, 600); return; }
+    var src = queue.shift();
+    var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 8000);
+    var opt = { credentials: 'omit', cache: 'default' };
+    if (ctrl) opt.signal = ctrl.signal;
+    try { opt.priority = 'low'; } catch (e) {}  // Chromium 认；其它内核忽略
+    fetching = true;
+    fetch(src, opt)
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.blob(); })
+      .then(function (b) { remember(src, URL.createObjectURL(b)); })
+      .catch(function () {})
+      .then(function () {
+        clearTimeout(timer);
+        delete pending[src];
+        fetching = false;
+        pump();
+      });
+  }
+
+  function enqueue(src) {
+    if (!src || !canFetch || blobUrls[src] || pending[src]) return;
+    if (conn && conn.saveData) return;   // 省流量模式不预取
+    pending[src] = true;
+    queue.push(src);
+    pump();
+  }
+
+  // 只在首次点击后预热相邻 2 句：上一句 + 下一句
   function prewarm(el) {
     var nodes = [].slice.call(document.querySelectorAll('[data-audio]'));
     var i = nodes.indexOf(el);
     if (i < 0) return;
     var near = [];
-    for (var d = 1; d <= 2; d++) {
-      if (nodes[i - d]) near.push(nodes[i - d]);
-      if (nodes[i + d]) near.push(nodes[i + d]);
-    }
+    if (nodes[i - 1]) near.push(nodes[i - 1]);
+    if (nodes[i + 1]) near.push(nodes[i + 1]);
     idle(function () {
-      near.forEach(function (n) {
-        var src = n.getAttribute('data-audio');
-        if (src && !pool[src]) {
-          var a = new Audio(src);
-          a.preload = 'metadata';
-          pool[src] = a;
-        }
-      });
+      if (document.hidden) return;
+      near.forEach(function (n) { enqueue(n.getAttribute('data-audio')); });
     });
   }
 
   window.speakEl = function (el) {
     var src = el.getAttribute('data-audio');
     if (!src) return;  // 无教材原声则静默，不回退浏览器合成音
-    if (current) {
-      try { current.pause(); current.currentTime = 0; } catch (e) {}
-    }
     document.querySelectorAll('.speaking').forEach(function (x) { x.classList.remove('speaking'); });
     el.classList && (el.classList.add('speaking'));
+
+    var a = ensurePlayer();
+    try { a.pause(); } catch (e) {}
+    var url = blobUrls[src] || src;
+    if (a.src !== url) a.src = url;   // 有缓存则同步切到 blob，点击当帧就能 play
+    currentSrc = src;
+    try { a.currentTime = 0; } catch (e) {}
+    var clear = function () { el.classList && el.classList.remove('speaking'); };
+    a.onended = clear;
+    a.onerror = clear;
     try {
-      var a = getAudio(src);
-      current = a;
-      var clear = function () { el.classList && el.classList.remove('speaking'); };
-      a.onended = clear;
-      a.onerror = clear;
-      try { a.currentTime = 0; } catch (e) {}
       var p = a.play();
       if (p && p.catch) p.catch(clear);
-      prewarm(el);
     } catch (e) {
-      el.classList && el.classList.remove('speaking');
+      clear();
     }
+    prewarm(el);
   };
 
   // 滚动进度条 + 导航滚动变色
